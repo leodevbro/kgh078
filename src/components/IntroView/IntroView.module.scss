@@ -1,6 +1,12 @@
 @import "src/styling-constants/colors.scss";
 
 .ground {
+  margin-bottom: 120px;
+
+  @media (max-width: 800px) {
+    margin-bottom: 80px;
+  }
+
   .mainBox {
     display: flex;
     flex-wrap: wrap;
@@ -70,8 +76,6 @@
           }
 
           .learnMore {
-            
-
             &:hover {
               cursor: pointer;
             }
@@ -100,6 +104,22 @@
         width: 100%;
         object-fit: cover;
         object-position: 80% 0;
+      }
+
+      .svgOfPlus {
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media (max-width: 1100px) {
+          right: initial;
+          left: 20px;
+          bottom: 20px;
+        }
       }
     }
   }
