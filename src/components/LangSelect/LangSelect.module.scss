@@ -1,0 +1,47 @@
+.langSelectBox {
+  // position: fixed;
+  // z-index: 100;
+  // left: 0px;
+  // top: 0px;
+  //   width: 30px;
+  //   height: 80px;
+  //   border: 1px solid red;
+
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+
+  .langSelect {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: -webkit-center;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: antiquewhite;
+    font-size: 0.75rem;
+    min-width: 20px;
+    min-height: 18px;
+    padding: 5px;
+
+    color: rgb(92, 71, 46);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .optionOfLangSelect {
+      // position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

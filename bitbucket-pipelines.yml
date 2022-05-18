@@ -1,0 +1,42 @@
+# Prerequisites: $AWS_ACCESS_KEY_ID, $AWS_SECRET_ACCESS_KEY setup in the Deployment variables.
+# For advanced cases, please, follow examples from the pipe's:
+# README https://bitbucket.org/atlassian/aws-s3-deploy/src/master/README.md
+# README https://bitbucket.org/atlassian/aws-cloudfront-invalidate/src/master/README.md
+
+image: node:16.13.0
+pipelines:
+  default:
+    - step:
+        name: Build
+        caches:
+          - node
+        script:
+          - npm run init
+          - npm run build
+  branches:
+    master:
+      - step:
+          name: Build
+          caches:
+            - node
+          script:
+            - npm run init
+            - npm run build
+            - apt-get update && apt-get install --yes zip
+          artifacts:
+            - build/**
+      - step:
+          name: Deploy frontend
+          deployment: Deployment frontend
+          condition:
+            changesets:
+              includePaths:
+                - "**"
+          script:
+            - pipe: atlassian/aws-s3-deploy:0.4.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: "us-east-1"
+                S3_BUCKET: "dev-client-bedrosians"
+                LOCAL_PATH: "build"
