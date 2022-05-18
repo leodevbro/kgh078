@@ -17,9 +17,13 @@ export const IntroView: React.FC<{
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
         <div className={style.introDescription}>
-          <div className={style.title}></div>
-          <div className={style.desc}></div>
-          <div className={style.more}></div>
+          <div className={style.textView}>
+            <div className={style.title}>{t("widePlankHighStyle")}</div>
+            <div className={style.desc}>{t("achieveTheLuxuriousLook")}</div>
+            <div className={style.more}>
+              <span className={style.learnMore}>{t("learnMore")}</span>
+            </div>
+          </div>
         </div>
         <div className={style.imageBox}>
           <img className={style.introImg} alt="intro" src={pathOfNestLoft} />

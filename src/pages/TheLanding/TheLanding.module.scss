@@ -4,14 +4,14 @@
 .ground {
   // border: 1px solid red;
   background-color: $coolBack;
-  padding: clamp(14px, 3%, 65px);
+  padding: clamp(20px, 5%, 96px);
   padding-bottom: 80px;
   display: flex;
   justify-content: center;
 
   .center {
-    max-width: min(1200px, 100%);
-    width: 1200px;
+    max-width: min(1728px, 100%);
+    width: 1728px;
     // border: 1px solid blue;
 
     // .mainTop {}
