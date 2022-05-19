@@ -3,7 +3,9 @@ import React from "react";
 // import { useParams } from "react-router-dom";
 // import { cla } from "src/App";
 import { IntroView } from "src/components/IntroView/IntroView";
+import { PlanxMainInfo } from "src/components/PlanxMainInfo/PlanxMainInfo";
 import { TonesView } from "src/components/TonesView/TonesView";
+import { VideoView } from "src/components/VideoView/VideoView";
 // import { AuthFlowEnum, BasicStatusOfUserT, UserRoleEnum } from "src/app/redux-slices/sweetSlice";
 // import { useAuthCheck } from "src/app/routing/ProtectedRoutes";
 
@@ -35,6 +37,8 @@ export const TheLanding: React.FC<{}> = () => {
       <div className={style.center}>
         <IntroView />
         <TonesView />
+        <VideoView />
+        <PlanxMainInfo />
       </div>
     </div>
   );
