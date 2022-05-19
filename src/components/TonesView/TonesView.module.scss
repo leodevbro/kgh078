@@ -27,8 +27,15 @@
 
     .descAndFrost {
       margin-bottom: 30px;
+      column-gap: 45px;
+      row-gap: 30px;
+
+      display: flex;
+      flex-wrap: wrap;
 
       .desc {
+        width: 350px;
+        flex-grow: 1.2;
         color: $black17;
         font-size: 20px;
         line-height: 28px;
@@ -40,10 +47,111 @@
       }
 
       .frost {
+        width: 100px;
+        flex-grow: 1;
+        flex-shrink: 0;
+        min-width: max-content;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .frostWrap {
+          display: flex;
+          column-gap: 12px;
+
+          align-items: center;
+
+          .textOfFrost {
+            font-size: 20px;
+            font-weight: 600;
+
+            @media (max-width: 800px) {
+              font-size: 16px;
+            }
+          }
+
+          .toneBoxes {
+            display: flex;
+
+            column-gap: 16px;
+
+            @media (max-width: 800px) {
+              column-gap: 8px;
+            }
+
+            .toneBox {
+              width: 64px;
+              height: 64px;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              border: 1px solid transparent;
+
+              border-radius: 12px;
+
+              @media (max-width: 1100px) {
+                width: 32px;
+                height: 32px;
+                border-radius: 4px;
+              }
+
+              &.selected {
+                border-color: #dcdcdc;
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+              }
+
+              &:nth-child(2) {
+                .innerBox {
+                  background-color: rgb(187, 161, 141);
+                }
+              }
+
+              &:nth-child(3) {
+                .innerBox {
+                  background-color: rgb(199, 169, 145);
+                }
+              }
+
+              &:nth-child(4) {
+                .innerBox {
+                  background-color: rgb(148, 126, 114);
+                }
+              }
+
+              &:nth-child(4) {
+                .innerBox {
+                  background-color: rgb(162, 136, 123);
+                }
+              }
+
+              .innerBox {
+                width: 54px;
+                height: 54px;
+                border-radius: 10px;
+
+                background-color: rgb(210, 198, 187);
+
+                &:hover {
+                  cursor: pointer;
+                }
+
+                @media (max-width: 1100px) {
+                  width: 26px;
+                  height: 26px;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+        }
       }
     }
 
     .visuals {
+      
       display: flex;
       flex-wrap: nowrap;
 
@@ -51,6 +159,19 @@
 
       @media (max-width: 800px) {
         column-gap: 20px;
+      }
+
+      &.tone1 {
+        filter: brightness(0.9);
+      }
+      &.tone2 {
+        filter: brightness(0.8);
+      }
+      &.tone3 {
+        filter: brightness(0.7);
+      }
+      &.tone4 {
+        filter: brightness(0.6);
       }
 
       .left {
