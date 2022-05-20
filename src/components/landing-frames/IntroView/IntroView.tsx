@@ -8,7 +8,8 @@ import style from "./IntroView.module.scss";
 
 import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 
-import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
+// import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
+import { PlusBox } from "src/components/PlusBox/PlusBox";
 
 export const IntroView: React.FC<{
   className?: string;
@@ -29,7 +30,7 @@ export const IntroView: React.FC<{
         </div>
         <div className={style.imageBox}>
           <img className={style.introImg} alt="intro" src={pathOfNestLoft} />
-          <SvgOfPlus className={style.svgOfPlus} />
+          <PlusBox className={style.plusBox} />
         </div>
       </div>
     </div>
