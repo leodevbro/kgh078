@@ -2,10 +2,10 @@ import React from "react";
 // import { useTranslation } from "react-i18next";
 // import { useParams } from "react-router-dom";
 // import { cla } from "src/App";
-import { IntroView } from "src/components/IntroView/IntroView";
-import { PlanxMainInfo } from "src/components/PlanxMainInfo/PlanxMainInfo";
-import { TonesView } from "src/components/TonesView/TonesView";
-import { VideoView } from "src/components/VideoView/VideoView";
+import { IntroView } from "src/components/landing-frames/IntroView/IntroView";
+import { PlanxMainInfo } from "src/components/landing-frames/PlanxMainInfo/PlanxMainInfo";
+import { TonesView } from "src/components/landing-frames/TonesView/TonesView";
+import { VideoView } from "src/components/landing-frames/VideoView/VideoView";
 // import { AuthFlowEnum, BasicStatusOfUserT, UserRoleEnum } from "src/app/redux-slices/sweetSlice";
 // import { useAuthCheck } from "src/app/routing/ProtectedRoutes";
 
