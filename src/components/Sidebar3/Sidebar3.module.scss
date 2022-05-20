@@ -408,7 +408,7 @@
 
         &.isCurr {
           color: $blue500;
-          font-weight: 600;
+          font-weight: 500;
           background: rgb(231, 240, 251);
 
           // white-space: nowrap;
@@ -645,7 +645,7 @@
   .expHead {
     min-height: 56px;
     max-width: 100%;
-    font-weight: 600;
+    font-weight: 500;
 
     &:hover {
       // background-color: rgb(215, 232, 253);
@@ -720,7 +720,7 @@
 
   .title {
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     color: $black17;
   }
 }

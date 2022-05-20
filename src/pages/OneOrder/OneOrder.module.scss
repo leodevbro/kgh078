@@ -65,7 +65,7 @@
     .parentPageTitle {
       font-size: 1.5rem;
       color: $gray400;
-      font-weight: 600;
+      font-weight: 500;
 
       &:hover {
         cursor: pointer;
@@ -84,7 +84,7 @@
     .orderNumber {
       font-size: 1.4rem;
       color: black;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
@@ -95,7 +95,7 @@
 
     .download {
       color: $blue500;
-      font-weight: 600;
+      font-weight: 500;
 
       &:hover {
         cursor: pointer;
@@ -152,7 +152,7 @@
     .title {
       font-size: 1.25rem;
       color: $gray600;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
@@ -174,7 +174,7 @@
   .topBox {
     font-size: 1.5rem;
     color: $black17;
-    font-weight: 600;
+    font-weight: 500;
 
     display: flex;
     align-items: center;
@@ -200,7 +200,7 @@
       margin-bottom: 8px;
 
       &.savings {
-        font-weight: 600;
+        font-weight: 500;
       }
     }
   }
@@ -230,7 +230,7 @@
     .value {
       font-size: 1.125rem;
       color: $black17;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }
@@ -278,7 +278,7 @@
 
       .orderAgainButton {
         color: $blue500;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 1rem;
 
         &:hover {
@@ -300,7 +300,7 @@
 
     font-size: 1.25rem;
     color: $black17;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 6px;
 
     // .title {
@@ -374,7 +374,7 @@
         &.note {
           .name,
           .value {
-            font-weight: 600;
+            font-weight: 500;
             color: $gray600;
           }
         }
@@ -384,7 +384,7 @@
     .additionalInfo {
       font-size: 0.875rem;
       color: $black17;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 24px;
     }
 
@@ -399,7 +399,7 @@
       .totalPrice {
         font-size: 1.125rem;
         color: $black17;
-        font-weight: 600;
+        font-weight: 500;
       }
     }
   }
@@ -422,7 +422,7 @@
 
     font-size: 1.25rem;
     color: $black17;
-    font-weight: 600;
+    font-weight: 500;
 
     // .left {
     // }
