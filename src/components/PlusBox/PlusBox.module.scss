@@ -1,10 +1,13 @@
 @import "src/styling-constants/colors.scss";
 
+$optimalWidthOfContent: 246px;
+$optimalHeightOfContent: 150px;
+
 .ground {
   // border: 1px solid blue;
 
   .content {
-    background-color: aquamarine;
+    background-color: white;
     // border: 1px solid red;
     border-radius: 20px;
 
@@ -21,7 +24,7 @@
       min-width: 40px;
       max-height: 40px;
       min-height: 40px;
-      opacity: 0;
+      // opacity: 0;
 
       @media (max-width: 800px) {
         max-width: 34px;
@@ -32,16 +35,84 @@
     }
 
     &.vis {
-      max-width: 200px;
-      max-height: 200px;
-      opacity: 1;
+      max-width: $optimalWidthOfContent;
+      max-height: $optimalHeightOfContent;
+      // opacity: 1;
+    }
+
+    .contentIn {
+      overflow-wrap: anywhere;
+      padding: 20px;
+      padding-bottom: 4px;
+
+      min-width: $optimalWidthOfContent;
+      min-height: $optimalHeightOfContent;
+
+      max-width: $optimalWidthOfContent;
+      max-height: $optimalHeightOfContent;
+
+      transition: opacity 0.3s ease-in-out;
+
+      &.vis {
+        opacity: 1;
+      }
+
+      &.hid {
+        opacity: 0;
+      }
+
+      .up {
+        display: flex;
+        flex-wrap: nowrap;
+        column-gap: 16px;
+        margin-bottom: 26px;
+
+        .left {
+          .plankImg {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+          }
+        }
+
+        .right {
+          .infoTitle {
+            color: $black17;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+
+            margin-bottom: 6px;
+          }
+
+          .infoDetails {
+            color: rgb(150, 150, 150);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      .down {
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        justify-content: center;
+        color: black;
+
+        .shopButton {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 
   .plusButton {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
 
     display: flex;
     align-items: center;
@@ -59,9 +130,21 @@
       border-radius: 17px;
     }
 
+    color: rgb(98, 98, 98);
+
     &:hover {
       cursor: pointer;
-      background-color: rgb(240, 240, 240);
+      color: rgb(22, 22, 22);
+    }
+
+    bottom: 0px;
+
+    &.dirleft {
+      right: 0px;
+    }
+
+    &.dirRight {
+      left: 0px;
     }
   }
 }

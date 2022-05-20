@@ -120,6 +120,13 @@
           left: 20px;
           bottom: 20px;
         }
+
+        .myPlusButton {
+          @media (max-width: 1100px) {
+            right: initial;
+            left: 0px;
+          }
+        }
       }
     }
   }

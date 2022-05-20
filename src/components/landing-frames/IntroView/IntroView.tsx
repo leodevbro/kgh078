@@ -30,7 +30,11 @@ export const IntroView: React.FC<{
         </div>
         <div className={style.imageBox}>
           <img className={style.introImg} alt="intro" src={pathOfNestLoft} />
-          <PlusBox className={style.plusBox} />
+          <PlusBox
+            className={style.plusBox}
+            classOfPlusButton={style.myPlusButton}
+            openDir={"left"}
+          />
         </div>
       </div>
     </div>
