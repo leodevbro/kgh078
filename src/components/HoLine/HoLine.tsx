@@ -7,7 +7,7 @@ import style from "./HoLine.module.scss";
 
 export const HoLine: React.FC<{ text: string; className?: string }> = ({ text, className }) => {
   return (
-    <div className={cla(className, style.hoLineBin)}>
+    <div className={cla(className, style.ground)}>
       <span className={style.wrapSpan}>
         <span className={style.leftSide}></span>
         <span className={style.text}>{text}</span>
