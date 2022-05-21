@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 // import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
 
@@ -21,10 +21,33 @@ import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 // import "swiper/modules/pagination/pagination.scss"; // Pagination module
 
+import { ReactComponent as SvgOfArrowRight } from "src/styling-constants/svg-items/arrow-right-3.svg";
+
+import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
+import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
+
 export const GalleryView: React.FC<{
   className?: string;
 }> = ({ className }) => {
   // const { t } = useTranslation();
+
+  const myImages = useMemo<{ id: string; path: string }[]>(() => {
+    const arr: { id: string; path: string }[] = [
+      { id: "0", path: pathOfNestLoft },
+      { id: "1", path: pathOfAcornCucina },
+      { id: "2", path: pathOfNestLoft },
+      { id: "3", path: pathOfAcornCucina },
+      { id: "4", path: pathOfNestLoft },
+      //
+      { id: "5", path: pathOfAcornCucina },
+      { id: "6", path: pathOfNestLoft },
+      { id: "7", path: pathOfAcornCucina },
+      { id: "8", path: pathOfNestLoft },
+      { id: "9", path: pathOfAcornCucina },
+    ];
+
+    return arr;
+  }, []);
 
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -51,24 +74,22 @@ export const GalleryView: React.FC<{
           ]}
           className={style.mySwiper}
         >
-          <SwiperSlide className={style.sl}>Slide 1</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 2</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 3</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 4</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 5</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 6</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 7</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 8</SwiperSlide>
-          <SwiperSlide className={style.sl}>Slide 9</SwiperSlide>
+          {myImages.map((item) => {
+            return (
+              <SwiperSlide key={item.id} className={style.sl}>
+                <img className={style.slideImage} alt="slide item" src={item.path} />
+              </SwiperSlide>
+            );
+          })}
 
           {/* ---------------------- */}
 
           <div ref={navigationPrevRef} className={style.goLeft}>
-            11
+            <SvgOfArrowRight className={style.svgOfArrow} />
           </div>
 
           <div ref={navigationNextRef} className={style.goRight}>
-            22
+            <SvgOfArrowRight className={style.svgOfArrow} />
           </div>
         </Swiper>
       </div>
