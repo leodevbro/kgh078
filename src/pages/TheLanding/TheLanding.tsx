@@ -1,4 +1,5 @@
 import React from "react";
+import { GreenFriendly } from "src/components/landing-frames/GreenFriendly/GreenFriendly";
 // import { useTranslation } from "react-i18next";
 // import { useParams } from "react-router-dom";
 // import { cla } from "src/App";
@@ -39,6 +40,9 @@ export const TheLanding: React.FC<{}> = () => {
         <TonesView />
         <VideoView />
         <PlanxMainInfo />
+        {/* aaaa */}
+
+        <GreenFriendly />
       </div>
     </div>
   );
