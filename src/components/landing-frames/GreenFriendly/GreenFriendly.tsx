@@ -7,7 +7,7 @@ import { cla } from "src/App";
 import style from "./GreenFriendly.module.scss";
 
 // import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
-import pathOfGrassImage from "src/styling-constants/raster-items/philipp-lublasser-LNYdZutqsi0-unsplash.jpg";
+import pathOfGrassImage from "src/styling-constants/raster-items/philipp-lublasser-LNYdZutqsi0-unsplash-v2.jpg";
 
 export const GreenFriendly: React.FC<{
   className?: string;
