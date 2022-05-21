@@ -51,7 +51,7 @@ $optimalHeightOfContent: 150px;
       max-width: $optimalWidthOfContent;
       max-height: $optimalHeightOfContent;
 
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.4s ease-out;
 
       &.vis {
         opacity: 1;
