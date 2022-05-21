@@ -1,35 +1,12 @@
 import React from "react";
 // import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
-// import ReactDOM from 'react-dom';
-
-// >>>>>>>
-// import Swiper from 'swiper';
-// import 'swiper/css';
-// import { Swiper, SwiperSlide } from "swiper/react";
-
-// eslint-disable-next-line
-// import "swiper/css/bundle";
-
-// eslint-disable-next-line
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-
-// import { Pagination, Navigation } from "swiper";
-
-// <<<<<<<<<<<
 
 import { cla } from "src/App";
 import style from "./GalleryView.module.scss";
 
 // import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 // =======================================================================================
-
-// import Swiper core and required modules
-// import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-// import { Swiper, SwiperSlide } from "swiper/react";
 
 // Core modules imports are same as usual
 import {
@@ -49,6 +26,9 @@ export const GalleryView: React.FC<{
 }> = ({ className }) => {
   // const { t } = useTranslation();
 
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
+
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
@@ -61,12 +41,15 @@ export const GalleryView: React.FC<{
           // pagination={{
           //   clickable: true,
           // }}
-          navigation={true}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
           modules={[
             // Pagination,
             Navigation,
           ]}
-          className="mySwiper"
+          className={style.mySwiper}
         >
           <SwiperSlide className={style.sl}>Slide 1</SwiperSlide>
           <SwiperSlide className={style.sl}>Slide 2</SwiperSlide>
@@ -77,6 +60,16 @@ export const GalleryView: React.FC<{
           <SwiperSlide className={style.sl}>Slide 7</SwiperSlide>
           <SwiperSlide className={style.sl}>Slide 8</SwiperSlide>
           <SwiperSlide className={style.sl}>Slide 9</SwiperSlide>
+
+          {/* ---------------------- */}
+
+          <div ref={navigationPrevRef} className={style.goLeft}>
+            11
+          </div>
+
+          <div ref={navigationNextRef} className={style.goRight}>
+            22
+          </div>
         </Swiper>
       </div>
     </div>
