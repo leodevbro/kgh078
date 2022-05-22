@@ -19,16 +19,17 @@ export const SeeMoreFrame: React.FC<{
       { id: "0", path: pathOfNestLoft },
       { id: "1", path: pathOfAcornCucina },
       { id: "2", path: pathOfNestLoft },
-      { id: "3", path: pathOfAcornCucina },
-      { id: "4", path: pathOfNestLoft },
-      //
-      { id: "5", path: pathOfAcornCucina },
-      { id: "6", path: pathOfNestLoft },
-      { id: "7", path: pathOfAcornCucina },
-      { id: "8", path: pathOfNestLoft },
-      { id: "9", path: pathOfAcornCucina },
+      // { id: "3", path: pathOfAcornCucina },
+      // { id: "4", path: pathOfNestLoft },
+      // //
+      // { id: "5", path: pathOfAcornCucina },
+      // { id: "6", path: pathOfNestLoft },
+      // { id: "7", path: pathOfAcornCucina },
+      // { id: "8", path: pathOfNestLoft },
+      // { id: "9", path: pathOfAcornCucina },
     ];
 
+    // return arr.slice(0, 3);
     return arr;
   }, []);
 
@@ -50,6 +51,7 @@ export const SeeMoreFrame: React.FC<{
 
         <SweetSlider
           classOfSlider={style.superSlider}
+          classOfSlide={style.superSlide}
           classOfGoLeft={style.goLeft}
           classOfGoRight={style.goRight}
           slideItems={arrForSlider}

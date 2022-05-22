@@ -1,14 +1,16 @@
 @import "src/styling-constants/colors.scss";
 
-$distLeftRight: clamp(20px, 5%, 96px);
+// $distLeftRight: clamp(20px, 5%, 96px);
 
 .ground {
-  // padding-left: $distLeftRight;
-  // padding-right: $distLeftRight;
+  --dist-left-right: clamp(20px, 5%, 96px);
+  --column-gap: 36px;
+
   margin-bottom: 120px;
 
   @media (max-width: 800px) {
     margin-bottom: 80px;
+    --column-gap: 20px;
   }
 
   .mainBox {
@@ -20,8 +22,8 @@ $distLeftRight: clamp(20px, 5%, 96px);
     // justify-content: center;
 
     .top {
-      padding-left: $distLeftRight;
-      padding-right: $distLeftRight;
+      padding-left: var(--dist-left-right);
+      padding-right: var(--dist-left-right);
 
       margin-bottom: 44px;
 
@@ -50,15 +52,28 @@ $distLeftRight: clamp(20px, 5%, 96px);
 }
 
 .superSlider.superSlider.superSlider.superSlider {
-  padding-left: $distLeftRight;
-  padding-right: $distLeftRight;
+  padding-left: calc(var(--dist-left-right) - (var(--column-gap) / 2));
+  padding-right: calc(var(--dist-left-right) - (var(--column-gap) / 2));
+
+  .superSlide {
+    width: calc((100% / 3) - 0px);
+    // width: initial;
+    padding-left: calc(var(--column-gap) / 2);
+    padding-right: calc(var(--column-gap) / 2);
+
+    @media (max-width: 700px) {
+      width: 266px;
+    }
+  }
 
   .goLeft {
-    left: $distLeftRight;
+    left: var(--dist-left-right);
+    display: none;
   }
 
   .goRight {
-    right: $distLeftRight;
+    right: var(--dist-left-right);
+    display: none;
   }
 }
 
