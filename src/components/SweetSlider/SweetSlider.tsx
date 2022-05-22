@@ -25,7 +25,18 @@ export const SweetSlider: React.FC<{
   slideItems?: { id: string; el: ReactNode }[];
   classOfSlider?: string;
   classOfSlide?: string;
-}> = ({ className, slideItems, classOfSlider, classOfSlide }) => {
+  classOfGoLeft?: string;
+  classOfGoRight?: string;
+  leftRightPaddingCss?: string; // clamp(20px, 5%, 96px);
+}> = ({
+  className,
+  slideItems,
+  classOfSlider,
+  classOfSlide,
+  classOfGoLeft,
+  classOfGoRight,
+  leftRightPaddingCss,
+}) => {
   // const myImages = useMemo<{ id: string; path: string }[]>(() => {
   //   const arr: { id: string; path: string }[] = [
   //     { id: "0", path: pathOfNestLoft },
@@ -67,6 +78,11 @@ export const SweetSlider: React.FC<{
           Navigation,
         ]}
         className={cla(style.mySwiper, classOfSlider)}
+        style={
+          leftRightPaddingCss
+            ? { paddingLeft: leftRightPaddingCss, paddingRight: leftRightPaddingCss }
+            : undefined
+        }
       >
         {slideItems &&
           slideItems.map((item) => {
@@ -79,11 +95,19 @@ export const SweetSlider: React.FC<{
 
         {/* ---------------------- */}
 
-        <div ref={navigationPrevRef} className={style.goLeft}>
+        <div
+          ref={navigationPrevRef}
+          className={cla(style.goLeft, classOfGoLeft)}
+          style={leftRightPaddingCss ? { left: leftRightPaddingCss } : undefined}
+        >
           <SvgOfArrowRight className={style.svgOfArrow} />
         </div>
 
-        <div ref={navigationNextRef} className={style.goRight}>
+        <div
+          ref={navigationNextRef}
+          className={cla(style.goRight, classOfGoRight)}
+          style={leftRightPaddingCss ? { right: leftRightPaddingCss } : undefined}
+        >
           <SvgOfArrowRight className={style.svgOfArrow} />
         </div>
       </Swiper>

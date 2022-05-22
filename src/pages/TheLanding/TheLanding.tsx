@@ -1,5 +1,6 @@
 import React from "react";
-import { GalleryView } from "src/components/landing-frames/GalleryView/GalleryView";
+// import { GalleryView } from "src/components/landing-frames/GalleryView/GalleryView";
+import { GalleryView2 } from "src/components/landing-frames/GalleryView2/GalleryView2";
 import { GreenFriendly } from "src/components/landing-frames/GreenFriendly/GreenFriendly";
 // import { useTranslation } from "react-i18next";
 // import { useParams } from "react-router-dom";
@@ -42,7 +43,8 @@ export const TheLanding: React.FC<{}> = () => {
         <VideoView />
         <PlanxMainInfo />
         {/* aaaa */}
-        <GalleryView />
+        {/* <GalleryView /> */}
+        <GalleryView2 />
         <GreenFriendly />
       </div>
     </div>
