@@ -37,24 +37,6 @@ export const SweetSlider: React.FC<{
   classOfGoRight,
   leftRightPaddingCss,
 }) => {
-  // const myImages = useMemo<{ id: string; path: string }[]>(() => {
-  //   const arr: { id: string; path: string }[] = [
-  //     { id: "0", path: pathOfNestLoft },
-  //     { id: "1", path: pathOfAcornCucina },
-  //     { id: "2", path: pathOfNestLoft },
-  //     { id: "3", path: pathOfAcornCucina },
-  //     { id: "4", path: pathOfNestLoft },
-  //     //
-  //     { id: "5", path: pathOfAcornCucina },
-  //     { id: "6", path: pathOfNestLoft },
-  //     { id: "7", path: pathOfAcornCucina },
-  //     { id: "8", path: pathOfNestLoft },
-  //     { id: "9", path: pathOfAcornCucina },
-  //   ];
-
-  //   return arr;
-  // }, []);
-
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
