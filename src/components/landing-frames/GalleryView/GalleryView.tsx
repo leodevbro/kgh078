@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
 
 import { cla } from "src/App";
@@ -29,7 +29,7 @@ import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.p
 export const GalleryView: React.FC<{
   className?: string;
 }> = ({ className }) => {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const myImages = useMemo<{ id: string; path: string }[]>(() => {
     const arr: { id: string; path: string }[] = [
@@ -55,6 +55,10 @@ export const GalleryView: React.FC<{
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
+        <div className={style.top}>
+          <span className={style.title}>{t("gallery")}</span>
+        </div>
+
         <Swiper
           slidesPerView={"auto"}
           spaceBetween={0}

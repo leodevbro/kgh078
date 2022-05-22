@@ -15,18 +15,41 @@ $distLeftRight: clamp(20px, 5%, 96px);
     // background-color: antiquewhite;
     min-height: 400px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 
-    .mySwiper {
+    .top {
       padding-left: $distLeftRight;
       padding-right: $distLeftRight;
+
+      margin-bottom: 44px;
+
+      @media (max-width: 1000px) {
+        margin-bottom: 32px;
+      }
+
+      .title {
+        color: $black17;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 48px;
+
+        @media (max-width: 1000px) {
+          font-size: 28px;
+          line-height: 36px;
+        }
+      }
     }
+
+    // .mySwiper {}
   }
 }
 
 .mySwiper.mySwiper.mySwiper {
+  padding-left: $distLeftRight;
+  padding-right: $distLeftRight;
+
   .sl {
     // border: 1px solid red;
     // background-color: antiquewhite;
