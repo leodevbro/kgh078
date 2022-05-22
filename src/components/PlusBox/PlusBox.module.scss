@@ -1,10 +1,50 @@
 @import "src/styling-constants/colors.scss";
 
-$optimalWidthOfContent: 246px;
-$optimalHeightOfContent: 150px;
+// $optimalWidthOfContent: 246px;
+// $optimalHeightOfContent: 150px;
 
 .ground {
+  --optimal-width: 246px;
+  --optimal-height: 150px;
+  --max-width: calc(100% - 44px);
+  max-width: var(--max-width);
   // border: 1px solid blue;
+
+  transition: clip-path 0.4s ease-in-out;
+
+  &.hid {
+    &.dirleft {
+      clip-path: inset(calc(100% - 40px) 0% 0% calc(100% - 40px) round 20px);
+
+      @media (max-width: 800px) {
+        clip-path: inset(calc(100% - 34px) 0% 0% calc(100% - 34px) round 17px);
+      }
+    }
+
+    &.dirright {
+      clip-path: inset(calc(100% - 40px) calc(100% - 40px) 0% 0% round 20px);
+
+      @media (max-width: 800px) {
+        clip-path: inset(calc(100% - 34px) calc(100% - 34px) 0% 0% round 17px);
+      }
+    }
+  }
+
+  &.vis {
+    clip-path: inset(0% 0% 0% 0% round 20px);
+
+    @media (max-width: 800px) {
+      clip-path: inset(0% 0% 0% 0% round 17px);
+    }
+
+    // &.dirleft {
+    //   clip-path: inset(0% 0% 0% 0% round 20px);
+    // }
+
+    // &.dirRight {
+    //   clip-path: inset(0% 0% 0% 0% round 20px);
+    // }
+  }
 
   .content {
     background-color: white;
@@ -17,26 +57,27 @@ $optimalHeightOfContent: 150px;
 
     overflow: hidden;
 
-    transition: max-width 0.3s ease-in-out, max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    // transition: max-width 0.5s ease-in-out, max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
-    &.hid {
-      max-width: 40px;
-      min-width: 40px;
-      max-height: 40px;
-      min-height: 40px;
-      // opacity: 0;
+    // &.hid {
+    //   max-width: 40px;
+    //   min-width: 40px;
+    //   max-height: 40px;
+    //   min-height: 40px;
+    //   // opacity: 0;
 
-      @media (max-width: 800px) {
-        max-width: 34px;
-        min-width: 34px;
-        max-height: 34px;
-        min-height: 34px;
-      }
-    }
+    //   @media (max-width: 800px) {
+    //     max-width: 34px;
+    //     min-width: 34px;
+    //     max-height: 34px;
+    //     min-height: 34px;
+    //   }
+    // }
 
     &.vis {
-      max-width: $optimalWidthOfContent;
-      max-height: $optimalHeightOfContent;
+      // max-width: 400px;
+      // max-height: 300px;
       // opacity: 1;
     }
 
@@ -45,11 +86,11 @@ $optimalHeightOfContent: 150px;
       padding: 20px;
       padding-bottom: 4px;
 
-      min-width: $optimalWidthOfContent;
-      min-height: $optimalHeightOfContent;
+      min-width: 50px;
+      min-height: var(--optimal-height);
 
-      max-width: $optimalWidthOfContent;
-      max-height: $optimalHeightOfContent;
+      // max-width: var(--max-width);
+      // max-height: calc(var(--optimal-height) + 50px);
 
       transition: opacity 0.4s ease-out;
 

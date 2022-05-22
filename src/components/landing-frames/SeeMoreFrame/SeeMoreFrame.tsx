@@ -7,26 +7,60 @@ import style from "./SeeMoreFrame.module.scss";
 
 import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
+import pathOfTile1 from "src/styling-constants/raster-items/plank1.png";
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
+import { PlusBox } from "src/components/PlusBox/PlusBox";
 
 export const SeeMoreFrame: React.FC<{
   className?: string;
 }> = ({ className }) => {
   const { t } = useTranslation();
 
-  const myImages = useMemo<{ id: string; path: string }[]>(() => {
-    const arr: { id: string; path: string }[] = [
-      { id: "0", path: pathOfNestLoft },
-      { id: "1", path: pathOfAcornCucina },
-      { id: "2", path: pathOfNestLoft },
-      // { id: "3", path: pathOfAcornCucina },
-      // { id: "4", path: pathOfNestLoft },
-      // //
-      // { id: "5", path: pathOfAcornCucina },
-      // { id: "6", path: pathOfNestLoft },
-      // { id: "7", path: pathOfAcornCucina },
-      // { id: "8", path: pathOfNestLoft },
-      // { id: "9", path: pathOfAcornCucina },
+  const slideItems = useMemo(() => {
+    const arr: {
+      id: string;
+      name: string;
+      slideImagePath: string;
+      plusBox: {
+        shopTileImagePath: string;
+        text1: string;
+        text2: string;
+        text3: string;
+      };
+    }[] = [
+      {
+        id: "0",
+        name: "Collection Name 1",
+        slideImagePath: pathOfNestLoft,
+        plusBox: {
+          shopTileImagePath: pathOfTile1,
+          text1: "Arrowhead",
+          text2: "Wood Look Matte",
+          text3: "Porcelain Tile",
+        },
+      },
+      {
+        id: "1",
+        name: "Collection Name 2",
+        slideImagePath: pathOfAcornCucina,
+        plusBox: {
+          shopTileImagePath: pathOfTile1,
+          text1: "Arrowhead",
+          text2: "Wood Look Matte",
+          text3: "Porcelain Tile",
+        },
+      },
+      {
+        id: "2",
+        name: "Collection Name 3",
+        slideImagePath: pathOfNestLoft,
+        plusBox: {
+          shopTileImagePath: pathOfTile1,
+          text1: "Arrowhead",
+          text2: "Wood Look Matte",
+          text3: "Porcelain Tile",
+        },
+      },
     ];
 
     // return arr.slice(0, 3);
@@ -34,13 +68,44 @@ export const SeeMoreFrame: React.FC<{
   }, []);
 
   const arrForSlider = useMemo(() => {
-    return myImages.map((x) => {
+    return slideItems.map((x) => {
+      const contentOfPlus = (
+        <div className={style.plusContent}>
+          <div className={style.left}>
+            <img className={cla(style.plankImg)} alt="tile" src={x.plusBox.shopTileImagePath} />
+          </div>
+
+          <div className={style.right}>
+            <div className={style.text1}>{x.plusBox.text1}</div>
+            <div className={style.text2}>{x.plusBox.text2}</div>
+            <div className={style.text3}>{x.plusBox.text3}</div>
+          </div>
+        </div>
+      );
+
       return {
         id: x.id,
-        el: <img className={style.slideImage} alt="slide item" src={x.path} />,
+        el: (
+          <div className={style.slideItem}>
+            <div className={style.boxForImage}>
+              <img className={style.slideImage} alt="slide item" src={x.slideImagePath} />
+
+              <PlusBox
+                className={style.plusBox}
+                classOfPlusButton={style.myPlusButton}
+                openDir={"right"}
+                content={contentOfPlus}
+              />
+            </div>
+
+            <div className={style.foot}>
+              <span className={style.name}>{x.name}</span>
+            </div>
+          </div>
+        ),
       };
     });
-  }, [myImages]);
+  }, [slideItems]);
 
   return (
     <div className={cla(style.ground, className)}>

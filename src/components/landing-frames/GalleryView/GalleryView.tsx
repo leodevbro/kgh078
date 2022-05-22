@@ -26,6 +26,11 @@ import { ReactComponent as SvgOfArrowRight } from "src/styling-constants/svg-ite
 import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
 
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 export const GalleryView: React.FC<{
   className?: string;
 }> = ({ className }) => {
