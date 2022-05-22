@@ -113,19 +113,18 @@
       @media (max-width: 1100px) {
         left: 12px;
         bottom: 12px;
+        max-width: calc(100% - 15px);
       }
 
-      .myPlusButton {
-        // @media (max-width: 1100px) {
-        //   right: initial;
-        //   left: 0px;
-        // }
-      }
+      // .myPlusButton {
+      //   //
+      // }
     }
   }
 
   .foot {
     .name {
+      //
     }
   }
 }
