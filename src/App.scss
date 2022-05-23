@@ -201,31 +201,31 @@
 // :root {
 //   background-color: rgb(252, 244, 234);
 
-//   --root-font-size: 16px; // as default
-//   --global-font: "Neue Haas Grotesk Display"; // as default
+//   --glo7-font-size: 16px; // as default
+//   --glo7-font: "Neue Haas Grotesk Display"; // as default
 
 //   //
 
 //   &[data-lang="en"] {
-//     --root-font-size: 16px; // for 1 rem value
-//     --global-font: "Neue Haas Grotesk Display";
+//     --glo7-font-size: 16px; // for 1 rem value
+//     --glo7-font: "Neue Haas Grotesk Display";
 //   }
 
 //   &[data-lang="ka"] {
-//     // --root-font-size: 14.5px; // for 1 rem value
-//     // --global-font: "Neue Haas Grotesk Display", "sylfaen";
-//     --global-font: "Neue Haas Grotesk Display";
+//     // --glo7-font-size: 14.5px; // for 1 rem value
+//     // --glo7-font: "Neue Haas Grotesk Display", "sylfaen";
+//     --glo7-font: "Neue Haas Grotesk Display";
 //   }
 
 //   &[data-lang="ru"] {
-//     // --root-font-size: 16px; // for 1 rem value
-//     --global-font: "Neue Haas Grotesk Display";
+//     // --glo7-font-size: 16px; // for 1 rem value
+//     --glo7-font: "Neue Haas Grotesk Display";
 //   }
 
 //   //
 
-//   font-family: var(--global-font);
-//   font-size: var(--root-font-size);
+//   font-family: var(--glo7-font);
+//   font-size: var(--glo7-font-size);
 // }
 
 // *,
@@ -275,31 +275,31 @@ body {
 
   background-color: rgb(252, 244, 234);
 
-  --root-font-size: 16px; // as default
-  --global-font: "Neue Haas Grotesk Display"; // as default
+  --glo7-font-size: 16px; // as default
+  --glo7-font: "Neue Haas Grotesk Display"; // as default
 
   //
 
   &[data-lang="en"] {
-    --root-font-size: 16px; // for 1 rem value
-    --global-font: "Neue Haas Grotesk Display";
+    --glo7-font-size: 16px; // for 1 rem value
+    --glo7-font: "Neue Haas Grotesk Display";
   }
 
   &[data-lang="ka"] {
-    // --root-font-size: 14.5px; // for 1 rem value
-    // --global-font: "Neue Haas Grotesk Display", "sylfaen";
-    --global-font: "Neue Haas Grotesk Display";
+    // --glo7-font-size: 14.5px; // for 1 rem value
+    // --glo7-font: "Neue Haas Grotesk Display", "sylfaen";
+    --glo7-font: "Neue Haas Grotesk Display";
   }
 
   &[data-lang="ru"] {
-    // --root-font-size: 16px; // for 1 rem value
-    --global-font: "Neue Haas Grotesk Display";
+    // --glo7-font-size: 16px; // for 1 rem value
+    --glo7-font: "Neue Haas Grotesk Display";
   }
 
   //
 
-  font-family: var(--global-font);
-  font-size: var(--root-font-size);
+  font-family: var(--glo7-font);
+  font-size: var(--glo7-font-size);
 
   .App {
     height: 100%;
@@ -316,7 +316,8 @@ body {
 
     .devControlArrow {
       background-color: #d5e5ff41;
-      position: fixed;
+      // position: fixed;
+      position: absolute;
       z-index: 5000000;
       left: 2px;
       top: 3px;

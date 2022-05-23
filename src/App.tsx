@@ -39,7 +39,7 @@ export const cla = classnames;
 export type LangsT = "en" | "ka" | "ru";
 
 const changeLangAttributeOnRoot = (newLang: LangsT) => {
-  const superRoot = window.document.querySelector(":root") as HTMLElement | null | undefined;
+  const superRoot = window.document.querySelector(".rootoflanding01") as HTMLElement | null | undefined;
   if (superRoot) {
     // superRoot.dataset.lang = newLang; // [data-lang="en"] or [data-lang="ru"] or .......
     superRoot.setAttribute("data-lang", newLang); // [data-lang="en"] or [data-lang="ru"] or .......
@@ -116,13 +116,14 @@ const App: React.FC = () => {
                 {/* <Route path={"*"} element={<Navigate to={"/"} />} /> */}
                 <Route
                   path={"*"}
-                  element={
-                    <div>
-                      <span>Page not found (You can go to </span>
-                      <Link to={"/"}>home page</Link>
-                      <span>)</span>
-                    </div>
-                  }
+                  // element={
+                  //   <div>
+                  //     <span>Page not found (You can go to </span>
+                  //     <Link to={"/"}>home page</Link>
+                  //     <span>)</span>
+                  //   </div>
+                  // }
+                  element={<TheLanding />}
                 />
               </Routes>
             </div>
