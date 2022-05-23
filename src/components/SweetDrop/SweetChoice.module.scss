@@ -32,7 +32,7 @@
     border-radius: 12px;
 
     .item {
-      font-size: 1rem;
+      font-size: calc(1 * var(--glo7-font-size));
       min-height: 52px;
       color: $blackyBlue;
 

@@ -40,7 +40,7 @@
 
   //   padding-left: 10px;
 
-  //   font-size: 1rem;
+  //   font-size: calc(1 * var(--glo7-font-size));
   //   // color: $blackyBlue;
   //   color: transparent;
 
@@ -101,7 +101,7 @@
       display: flex;
       align-items: center;
       color: rgb(55, 63, 65);
-      font-size: 1rem;
+      font-size: calc(1 * var(--glo7-font-size));
 
       .regularTitle {
         max-width: 100%;
@@ -112,13 +112,13 @@
 
       &.style1 {
         // font-weight: 500;
-        // font-size: 1.125rem;
+        // font-size: calc(1.125 * var(--glo7-font-size));
         color: $black17;
       }
 
       .currItemAsTitle {
         // max-width: 100%;
-        font-size: 1rem;
+        font-size: calc(1 * var(--glo7-font-size));
         font-weight: 500;
         color: $black17;
         white-space: nowrap;

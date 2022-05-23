@@ -206,7 +206,7 @@
         flex-grow: 1;
         // border: 1px solid blue;
         background: none;
-        font-size: 1rem;
+        font-size: calc(1 * var(--glo7-font-size));
         width: 320px;
         max-width: 100%;
 
@@ -278,7 +278,7 @@
       border-radius: 12px 12px 0px 0px;
 
       position: relative;
-      font-size: 0.75rem;
+      font-size: calc(0.75 * var(--glo7-font-size));
       background-color: $grayForTableHead;
       color: $grayForTableHeadText;
       // max-height:10000px;
@@ -330,7 +330,7 @@
     }
 
     .tBody {
-      font-size: 0.875rem;
+      font-size: calc(0.875 * var(--glo7-font-size));
       position: relative;
       color: $grayForTableText;
 
@@ -349,7 +349,7 @@
       flex-wrap: nowrap;
       justify-content: flex-end;
       align-items: center;
-      font-size: 0.875rem;
+      font-size: calc(0.875 * var(--glo7-font-size));
       color: black;
       font-weight: 700;
 
@@ -563,7 +563,7 @@
 
         .label {
           position: relative;
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--glo7-font-size));
           display: none;
           margin-right: 10px;
           // white-space: nowrap;

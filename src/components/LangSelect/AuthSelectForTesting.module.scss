@@ -27,7 +27,7 @@
     border: none;
     border-radius: 5px;
     background-color: antiquewhite;
-    font-size: 0.75rem;
+    font-size: calc(0.75 * var(--glo7-font-size));
     // width: 142px;
     height: 18px;
 

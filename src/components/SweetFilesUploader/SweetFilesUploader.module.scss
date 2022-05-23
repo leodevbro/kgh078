@@ -47,7 +47,7 @@
 
         .fileName {
           color: black;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--glo7-font-size));
           font-weight: 500;
           overflow-wrap: anywhere;
         }
@@ -118,7 +118,7 @@
         // }
         .titleText {
           color: $blue500;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--glo7-font-size));
           font-weight: 500;
         }
       }

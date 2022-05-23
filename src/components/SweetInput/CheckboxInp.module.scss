@@ -133,13 +133,13 @@
       color: $gray400;
       font-family: "Neue Haas Grotesk Display";
       line-height: 20px;
-      font-size: 1rem;
+      font-size: calc(1 * var(--glo7-font-size));
 
       &::placeholder {
         color: $gray400;
         font-family: "Neue Haas Grotesk Display";
         line-height: 20px;
-        font-size: 1rem;
+        font-size: calc(1 * var(--glo7-font-size));
       }
     }
   }

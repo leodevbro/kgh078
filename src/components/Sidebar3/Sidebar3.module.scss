@@ -596,7 +596,7 @@
           .profileName {
             max-width: 120px;
             overflow-wrap: anywhere;
-            font-size: 0.875rem;
+            font-size: calc(0.875 * var(--glo7-font-size));
             color: $black17;
           }
         }
@@ -719,7 +719,7 @@
   }
 
   .title {
-    font-size: 0.875rem;
+    font-size: calc(0.875 * var(--glo7-font-size));
     font-weight: 500;
     color: $black17;
   }

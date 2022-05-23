@@ -18,7 +18,7 @@
     align-items: center;
     column-gap: 16px;
 
-    font-size: 0.875rem;
+    font-size: calc(0.875 * var(--glo7-font-size));
     font-weight: 400;
     color: rgb(158, 158, 158);
 
@@ -129,7 +129,7 @@
 
 .pagingInfo {
   color: rgb(158, 158, 158);
-  font-size: 0.875rem;
+  font-size: calc(0.875 * var(--glo7-font-size));
   font-weight: 400;
   letter-spacing: 0.5px;
 }

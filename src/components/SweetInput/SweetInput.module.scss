@@ -22,7 +22,7 @@
       position: absolute;
       top: 8px;
       left: 14px;
-      font-size: 0.75rem;
+      font-size: calc(0.75 * var(--glo7-font-size));
       font-weight: 500;
       color: $gray600;
 
@@ -47,7 +47,7 @@
       background: none;
 
       font-weight: 500;
-      font-size: 1rem;
+      font-size: calc(1 * var(--glo7-font-size));
       color: #5a5a5a;
 
       color: black;

@@ -22,7 +22,7 @@
       margin-left: 5px;
       margin-right: 5px;
       color: $gray400;
-      font-size: 0.75rem;
+      font-size: calc(0.75 * var(--glo7-font-size));
     }
 
     .rightSide {

@@ -39,13 +39,13 @@
         // width: calc(100% - 10%);
 
         .title {
-          font-size: 5.25rem;
+          font-size: calc(5.25 * var(--glo7-font-size));
           font-weight: 500;
           color: $black17;
           margin-bottom: 24px;
 
           @media (max-width: 1100px) {
-            font-size: 2.5rem;
+            font-size: calc(2.5 * var(--glo7-font-size));
             margin-bottom: 16px;
           }
         }

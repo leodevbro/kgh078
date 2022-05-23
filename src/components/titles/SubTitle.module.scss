@@ -7,7 +7,7 @@
   margin: 0px;
 
   font-weight: 300;
-  font-size: 1rem;
+  font-size: calc(1 * var(--glo7-font-size));
   margin-bottom: 24px;
 
   color: $mediumGray;

@@ -149,7 +149,7 @@ export const changeAppLanguage = (languageCode: string) => {
 
 setTimeout(() => {
   const currLang = i18n.resolvedLanguage;
-  changeAppLanguage(currLang);
+  changeAppLanguage(currLang); // slider buttons not woking without this workaround, I don't know why
 }, 500);
 
 export default i18n;

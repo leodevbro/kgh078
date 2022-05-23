@@ -63,7 +63,7 @@
     row-gap: 4px;
 
     .parentPageTitle {
-      font-size: 1.5rem;
+      font-size: calc(1.5 * var(--glo7-font-size));
       color: $gray400;
       font-weight: 500;
 
@@ -82,7 +82,7 @@
     }
 
     .orderNumber {
-      font-size: 1.4rem;
+      font-size: calc(1.4 * var(--glo7-font-size));
       color: black;
       font-weight: 500;
     }
@@ -150,14 +150,14 @@
     margin-bottom: 32px;
 
     .title {
-      font-size: 1.25rem;
+      font-size: calc(1.25 * var(--glo7-font-size));
       color: $gray600;
       font-weight: 500;
     }
   }
 
   .bodyBox {
-    font-size: 1.125rem;
+    font-size: calc(1.125 * var(--glo7-font-size));
 
     .item {
       display: flex;
@@ -172,7 +172,7 @@
   padding-top: 32px;
 
   .topBox {
-    font-size: 1.5rem;
+    font-size: calc(1.5 * var(--glo7-font-size));
     color: $black17;
     font-weight: 500;
 
@@ -190,7 +190,7 @@
   }
 
   .bodyBox {
-    font-size: 1.125rem;
+    font-size: calc(1.125 * var(--glo7-font-size));
     color: $gray600;
 
     .item {
@@ -223,12 +223,12 @@
 
     .title {
       color: $gray400;
-      font-size: 1rem;
+      font-size: calc(1 * var(--glo7-font-size));
       margin-bottom: 12px;
     }
 
     .value {
-      font-size: 1.125rem;
+      font-size: calc(1.125 * var(--glo7-font-size));
       color: $black17;
       font-weight: 500;
     }
@@ -279,7 +279,7 @@
       .orderAgainButton {
         color: $blue500;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: calc(1 * var(--glo7-font-size));
 
         &:hover {
           cursor: pointer;
@@ -298,7 +298,7 @@
     justify-content: space-between;
     column-gap: 20px;
 
-    font-size: 1.25rem;
+    font-size: calc(1.25 * var(--glo7-font-size));
     color: $black17;
     font-weight: 500;
     margin-bottom: 6px;
@@ -316,7 +316,7 @@
   .bodyB {
     max-width: 500px;
     .subtitle {
-      font-size: 1.125rem;
+      font-size: calc(1.125 * var(--glo7-font-size));
       color: $gray600;
       margin-bottom: 16px;
     }
@@ -333,14 +333,14 @@
         align-items: center;
         column-gap: 16px;
         min-width: calc(50% - 6px);
-        font-size: 0.875rem;
+        font-size: calc(0.875 * var(--glo7-font-size));
 
         @media (max-width: 630px) {
           width: 100%;
         }
 
         .name {
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--glo7-font-size));
           color: $gray600;
           white-space: nowrap;
           min-width: calc(30% - 12px);
@@ -382,7 +382,7 @@
     }
 
     .additionalInfo {
-      font-size: 0.875rem;
+      font-size: calc(0.875 * var(--glo7-font-size));
       color: $black17;
       font-weight: 500;
       margin-bottom: 24px;
@@ -397,7 +397,7 @@
       }
 
       .totalPrice {
-        font-size: 1.125rem;
+        font-size: calc(1.125 * var(--glo7-font-size));
         color: $black17;
         font-weight: 500;
       }
@@ -407,7 +407,7 @@
 
 .gBDetailsPart3 {
   .title {
-    font-size: 0.875rem;
+    font-size: calc(0.875 * var(--glo7-font-size));
     color: $black17;
     margin-bottom: 18px;
   }
@@ -420,7 +420,7 @@
     column-gap: 24px;
     row-gap: 8px;
 
-    font-size: 1.25rem;
+    font-size: calc(1.25 * var(--glo7-font-size));
     color: $black17;
     font-weight: 500;
 
