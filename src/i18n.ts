@@ -7,59 +7,22 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // have a look at the Quick start guide
 // for passing in lng and translations on init
 
+import { trEn } from "src/locales/en/translation";
+import { trKa } from "src/locales/ka/translation";
+import { trRu } from "src/locales/ru/translation";
+
 // we use this instead of locale files when we want a single HTML file bundle
-const resources7 = { // copied from locale files
+const resources7 = {
   en: {
-    translation: {
-      home_word: "Home",
-      lessons: "Lessons",
-      p1: "This is Page 1",
-
-      widePlankHighStyle: "Wide Plank, High Style",
-      achieveTheLuxuriousLook:
-        "Achieve the luxurious look of wide plank, natural wood flooring with more durability and less upkeep than the real thing. Our Planx Collection offers the wood look you’ve been looking for.",
-      learnMore: "Learn More",
-
-      woodTonesAndWarmVibes: "Wood Tones and Warm Vibes",
-      thePlanxCollectionEffortlesslyCaptures:
-        "The Planx Collection effortlessly captures the look of real wood, both in color and scale. Made of porcelain in impressive 12”x72” formats, Planx offers an organic palette enhanced by its soft, matte finish and deep color body that scoffs at potential scuffs. And with a unique wood grain on every piece, there are no duplicate patterns on your floor.",
-      frost: "Frost",
-
-      shopThisLook: "Shop this look",
-
-      earthFirstFlooring: "Earth-First Flooring",
-      thePlanxCollectionIsGreenGuard:
-        "The Planx Collection is GreenGuard Certified and manufactured in a zero-emissions facility under strict guidelines, utilizing recycled content, natural materials and chemical-free processes.",
-      gallery: "Gallery",
-      wantToSeeMoreWoodLookTile: "Want to see more wood look tile?",
-    },
+    translation: trEn,
   },
 
   ka: {
-    translation: {
-      home_word: "სახლი",
-      lessons: "გაკვეთილები",
-      p1: "ეს არის გვერდი 1",
-
-      widePlankHighStyle: "განიერი ფიცარი, მაღალი სტილი",
-
-      achieveTheLuxuriousLook:
-        "შექმენით განიერი ფიცრის საუცხოო გარემო, ბუნებრივი ხის ვიზუალის მქონე იატაკით რომელიც უფრო გამძე და ნაკლებად მოსავლელია ვიდრე ნამდვილი ხის იატაკი. ჩვენი Planx კოლექცია გთავაზობთ ისეთი ხის ვიზუალს როგორსაც თქვენ ეძებთ.",
-      learnMore: "გაიგეთ მეტი",
-
-      woodTonesAndWarmVibes: "ხის ტონები და თბილი განწყობა",
-      thePlanxCollectionEffortlesslyCaptures:
-        "Planx კოლექცია მარტივად გვაძლევს ნამდვილი ხის ვიზუალს, როგორც ფერით ასევე მასშტაბით. დამზადებულია ფაიფურით 12”x72” ფორმატში. Planx-ი გთავაზობთ ორგანურ ფიცარს, გაუმჯობესებული გლუვი და მკვეთრი ფერის ზედაპირით რომელიც ადვილად არ იკაწრება. და ყოველ ფიცარზე უნიკალური მარცვლოვანი ვიზუალით თქვენს იატაკზე არ იქნება ორი ერთნაირი ფრაგმენტი.",
-      frost: "Frost",
-    },
+    translation: trKa,
   },
 
   ru: {
-    translation: {
-      home_word: "Домой",
-      lessons: "Уроки",
-      p1: "Это страница 1",
-    },
+    translation: trRu,
   },
 };
 
