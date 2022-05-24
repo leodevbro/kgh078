@@ -76,3 +76,4 @@ sample_nest:           "https://res.cloudinary.com/bedrosians/image/upload/v1/as
 sample_nest_2x:        "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/sample_nest_2x.png",
 };
 // 'color_meadow_2x' was two copies, so I deleted one
+// placeholder@2x.jpg is not here
