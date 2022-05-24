@@ -1,4 +1,4 @@
-export const trEn: Record<string, string> = {
+export const trEn = {
   home_word: "Home",
   lessons: "Lessons",
   p1: "This is Page 1",

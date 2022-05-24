@@ -1,4 +1,4 @@
-export const trKa: Record<string, string> = {
+export const trKa = {
   home_word: "სახლი",
   lessons: "გაკვეთილები",
   p1: "ეს არის გვერდი 1",
