@@ -29,7 +29,6 @@
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_frost_large.jpg",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_frost.jpg",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_meadow_2x.jpg",
-"https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_meadow_2x.jpg",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_meadow_large_2x.jpg",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_meadow_large.jpg",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/color_meadow.jpg",
@@ -73,3 +72,4 @@
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/sample_meadow.png",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/sample_nest_2x.png",
 "https://res.cloudinary.com/bedrosians/image/upload/v1/assets/planx/sample_nest.png",
+// 'color_meadow_2x' was two copies, so I deleted one
