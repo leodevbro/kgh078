@@ -6,7 +6,6 @@ import React from "react";
 import { cla } from "src/App";
 import style from "./VideoView.module.scss";
 
-// import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 
 export const VideoView: React.FC<{
   className?: string;

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./GalleryView.module.scss";
 
-// import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
+
 // =======================================================================================
 
 // Core modules imports are same as usual

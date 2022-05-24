@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./IntroView.module.scss";
 
-import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
+import { imgs } from "src/imglinks";
 
 // import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
 import { PlusBox } from "src/components/PlusBox/PlusBox";
@@ -29,7 +29,7 @@ export const IntroView: React.FC<{
           </div>
         </div>
         <div className={style.imageBox}>
-          <img className={style.introImg} alt="intro" src={pathOfNestLoft} />
+          <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} />
           <PlusBox
             className={style.plusBox}
             classOfPlusButton={style.myPlusButton}

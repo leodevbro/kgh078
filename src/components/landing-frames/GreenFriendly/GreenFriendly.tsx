@@ -6,8 +6,7 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./GreenFriendly.module.scss";
 
-// import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
-import pathOfGrassImage from "src/styling-constants/raster-items/philipp-lublasser-LNYdZutqsi0-unsplash-v2.jpg";
+import { imgs } from "src/imglinks";
 
 export const GreenFriendly: React.FC<{
   className?: string;
@@ -17,7 +16,7 @@ export const GreenFriendly: React.FC<{
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
-        <img className={style.grassImage} alt="grass" src={pathOfGrassImage} />
+        <img className={style.grassImage} alt="grass" src={imgs.certification_2x} />
 
         <div className={style.centerBox}>
           <div className={style.title}>{t("earthFirstFlooring")}</div>

@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 // import { useAuthCheck } from "src/app/routing/ProtectedRoutes";
 // import { WideButton } from "src/components/buttons/WideButton";
 
-// import profilePicExampleJpgPath from "src/styling-constants/raster-items/profile-pic-example.jpg";
 // import { ReactComponent as MailSvg } from "src/styling-constants/svg-items/mail.svg";
 // import { ReactComponent as UnlockSvg } from "src/styling-constants/svg-items/unlock-1.svg";
 

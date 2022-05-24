@@ -22,7 +22,7 @@ import { AuthSelectForTesting } from "./components/LangSelect/AuthSelectForTesti
 
 // import { Footer } from "./components/Footer/Footer";
 
-import { OneOrder } from "./pages/OneOrder/OneOrder";
+// import { OneOrder } from "./pages/OneOrder/OneOrder";
 
 import { SweetArrow } from "./components/SweetDrop/SweetArrow";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
@@ -39,7 +39,10 @@ export const cla = classnames;
 export type LangsT = "en" | "ka" | "ru";
 
 const changeLangAttributeOnRoot = (newLang: LangsT) => {
-  const superRoot = window.document.querySelector(".rootoflanding01") as HTMLElement | null | undefined;
+  const superRoot = window.document.querySelector(".rootoflanding01") as
+    | HTMLElement
+    | null
+    | undefined;
   if (superRoot) {
     // superRoot.dataset.lang = newLang; // [data-lang="en"] or [data-lang="ru"] or .......
     superRoot.setAttribute("data-lang", newLang); // [data-lang="en"] or [data-lang="ru"] or .......
@@ -110,7 +113,7 @@ const App: React.FC = () => {
                 <Route path={"/pages"} element={<Page1 />} />
 
                 <Route element={<ProtectedRoutesWrapper />}>
-                  <Route path={"/orders/:orderId"} element={<OneOrder />} />
+                  {/* <Route path={"/orders/:orderId"} element={<OneOrder />} /> */}
                 </Route>
 
                 {/* <Route path={"*"} element={<Navigate to={"/"} />} /> */}
