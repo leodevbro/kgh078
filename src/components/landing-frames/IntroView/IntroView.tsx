@@ -25,6 +25,7 @@ export const IntroView: React.FC<{
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
+        <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} />
         <div className={style.introDescription}>
           <div className={style.textView}>
             <div className={style.title}>{t("widePlankHighStyle")}</div>
@@ -34,8 +35,9 @@ export const IntroView: React.FC<{
             </div>
           </div>
         </div>
-        <div className={style.imageBox}>
-          <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} />
+
+        <div className={style.pBox}>
+          {/* <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} /> */}
           <PlusBox
             className={style.plusBox}
             classOfPlusButton={style.myPlusButton}

@@ -23,6 +23,21 @@
 
     min-height: clamp(380px, 50vw, 840px);
 
+    .introImg {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      object-fit: cover;
+      // object-position: 70% 50%;
+      // object-position: 80% 0;
+
+      @media (max-width: 800px) {
+        // object-position: 70px 82%;
+      }
+    }
+
     .introDescription {
       background-color: $coolSkin;
       width: 300px;
@@ -96,17 +111,19 @@
       }
     }
 
-    .imageBox {
+    .pBox {
+      min-height: 300px;
+      min-width: 41%;
       width: 300px;
       flex-grow: 1;
       flex-shrink: 1;
 
-      .introImg {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 80% 0;
-      }
+      // .introImg {
+      //   height: 100%;
+      //   width: 100%;
+      //   object-fit: cover;
+      //   object-position: 80% 0;
+      // }
 
       .plusBox {
         position: absolute;
