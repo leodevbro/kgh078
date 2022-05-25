@@ -56,5 +56,6 @@ export const trEn = {
   orOtherHarmfulElements: "or other harmful elements.",
 
   ecoFriendly: "Eco-friendly",
-  andTreeApproved: "and tree approved."
+  andTreeApproved: "and tree approved.",
+  findYourPerfectPlanx: "Find Your Perfect Planx"
 };

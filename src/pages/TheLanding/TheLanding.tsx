@@ -1,4 +1,5 @@
 import React from "react";
+import { FindPlanx } from "src/components/landing-frames/FindPlanx/FindPlanx";
 // import { GalleryView } from "src/components/landing-frames/GalleryView/GalleryView";
 import { GalleryView2 } from "src/components/landing-frames/GalleryView2/GalleryView2";
 import { GreenFriendly } from "src/components/landing-frames/GreenFriendly/GreenFriendly";
@@ -47,6 +48,7 @@ export const TheLanding: React.FC<{}> = () => {
         {/* aaaa */}
         {/* <GalleryView /> */}
         <GalleryView2 />
+        <FindPlanx />
         <GreenFriendly />
         <TheFinerPoints />
         <SeeMoreFrame />
