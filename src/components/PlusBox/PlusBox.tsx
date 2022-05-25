@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 
 import { cla } from "src/App";
 // import { Link } from "react-router-dom";
@@ -6,14 +6,21 @@ import { cla } from "src/App";
 import style from "./PlusBox.module.scss";
 
 import { ReactComponent as PlusIcon2 } from "src/styling-constants/svg-items/plus2.svg";
-import pathOfPlank1 from "src/styling-constants/raster-items/plank1.png";
+
 import { t } from "i18next";
+
+export interface IPlusObject {
+  imgSrc: string;
+  text1: string;
+  text2?: string;
+  text3?: string;
+}
 
 export const PlusBox: React.FC<{
   className?: string;
   classOfPlusButton?: string;
   openDir?: "left" | "right";
-  content?: ReactNode;
+  content: IPlusObject;
 }> = ({ className, classOfPlusButton, openDir = "right", content }) => {
   const [contentIsVis, setContentIsVis] = useState(false);
 
@@ -26,24 +33,15 @@ export const PlusBox: React.FC<{
       <div className={cla(style.content, cl_vis_hid)}>
         <div className={cla(style.contentIn, cl_vis_hid)}>
           <div className={style.up}>
-            {content ? (
-              content
-            ) : (
-              <>
-                <div className={style.left}>
-                  <img
-                    className={cla(style.plankImg, cl_vis_hid)}
-                    alt="plank0"
-                    src={pathOfPlank1}
-                  />
-                </div>
+            <div className={style.left}>
+              <img className={cla(style.plankImg, cl_vis_hid)} alt="plank0" src={content.imgSrc} />
+            </div>
 
-                <div className={style.right}>
-                  <div className={style.infoTitle}>{`Modni - Arlo Mosaic Cool Blend`}</div>
-                  <div className={style.infoDetails}>{`10 1/8" x 15 7/8" Sheet`}</div>
-                </div>
-              </>
-            )}
+            <div className={style.right}>
+              <div className={style.infoTitle}>{content.text1}</div>
+              <div className={style.infoDetails}>{content.text2}</div>
+              <div className={style.infoDetailsMore}>{content.text3}</div>
+            </div>
           </div>
           <div className={style.down}>
             <span className={style.shopButton}>{t("shopThisLook")}</span>

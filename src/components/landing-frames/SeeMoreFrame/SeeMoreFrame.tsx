@@ -9,7 +9,7 @@ import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
 import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
 import pathOfTile1 from "src/styling-constants/raster-items/plank1.png";
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
-import { PlusBox } from "src/components/PlusBox/PlusBox";
+import { IPlusObject, PlusBox } from "src/components/PlusBox/PlusBox";
 
 export const SeeMoreFrame: React.FC<{
   className?: string;
@@ -21,19 +21,14 @@ export const SeeMoreFrame: React.FC<{
       id: string;
       name: string;
       slideImagePath: string;
-      plusBox: {
-        shopTileImagePath: string;
-        text1: string;
-        text2: string;
-        text3: string;
-      };
+      plusBox: IPlusObject;
     }[] = [
       {
         id: "0",
         name: "Collection Name 1",
         slideImagePath: pathOfNestLoft,
         plusBox: {
-          shopTileImagePath: pathOfTile1,
+          imgSrc: pathOfTile1,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -44,7 +39,7 @@ export const SeeMoreFrame: React.FC<{
         name: "Collection Name 2",
         slideImagePath: pathOfAcornCucina,
         plusBox: {
-          shopTileImagePath: pathOfTile1,
+          imgSrc: pathOfTile1,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -55,7 +50,7 @@ export const SeeMoreFrame: React.FC<{
         name: "Collection Name 3",
         slideImagePath: pathOfNestLoft,
         plusBox: {
-          shopTileImagePath: pathOfTile1,
+          imgSrc: pathOfTile1,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -69,19 +64,26 @@ export const SeeMoreFrame: React.FC<{
 
   const arrForSlider = useMemo(() => {
     return slideItems.map((x) => {
-      const contentOfPlus = (
-        <div className={style.plusContent}>
-          <div className={style.left}>
-            <img className={cla(style.plankImg)} alt="tile" src={x.plusBox.shopTileImagePath} />
-          </div>
+      // const contentOfPlus = (
+      //   <div className={style.plusContent}>
+      //     <div className={style.left}>
+      //       <img className={cla(style.plankImg)} alt="tile" src={x.plusBox.shopTileImagePath} />
+      //     </div>
 
-          <div className={style.right}>
-            <div className={style.text1}>{x.plusBox.text1}</div>
-            <div className={style.text2}>{x.plusBox.text2}</div>
-            <div className={style.text3}>{x.plusBox.text3}</div>
-          </div>
-        </div>
-      );
+      //     <div className={style.right}>
+      //       <div className={style.text1}>{x.plusBox.text1}</div>
+      //       <div className={style.text2}>{x.plusBox.text2}</div>
+      //       <div className={style.text3}>{x.plusBox.text3}</div>
+      //     </div>
+      //   </div>
+      // );
+
+      const contentOfPlus: IPlusObject = {
+        imgSrc: x.plusBox.imgSrc,
+        text1: x.plusBox.text1,
+        text2: x.plusBox.text2,
+        text3: x.plusBox.text3,
+      };
 
       return {
         id: x.id,

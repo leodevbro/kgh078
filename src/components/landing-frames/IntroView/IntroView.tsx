@@ -9,12 +9,18 @@ import style from "./IntroView.module.scss";
 import { imgs } from "src/imglinks";
 
 // import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
-import { PlusBox } from "src/components/PlusBox/PlusBox";
+import { IPlusObject, PlusBox } from "src/components/PlusBox/PlusBox";
 
 export const IntroView: React.FC<{
   className?: string;
 }> = ({ className }) => {
   const { t } = useTranslation();
+
+  const plusContent: IPlusObject = {
+    imgSrc: imgs.color_acorn,
+    text1: `Modni - Arlo Mosaic Cool Blend`,
+    text2: `10 1/8" x 15 7/8" Sheet`,
+  };
 
   return (
     <div className={cla(style.ground, className)}>
@@ -34,6 +40,7 @@ export const IntroView: React.FC<{
             className={style.plusBox}
             classOfPlusButton={style.myPlusButton}
             openDir={"left"}
+            content={plusContent}
           />
         </div>
       </div>

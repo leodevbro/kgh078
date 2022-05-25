@@ -4,7 +4,7 @@ import React from "react";
 // import ReactDOM from 'react-dom';
 
 import { cla } from "src/App";
-import { PlusBox } from "src/components/PlusBox/PlusBox";
+// import { PlusBox } from "src/components/PlusBox/PlusBox";
 import style from "./PlanxMainInfo.module.scss";
 
 // import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
@@ -17,7 +17,7 @@ export const PlanxMainInfo: React.FC<{
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
-        <PlusBox className={style.plusBox} />
+        {/* <PlusBox className={style.plusBox} /> */}
       </div>
     </div>
   );

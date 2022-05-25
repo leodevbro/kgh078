@@ -1,3 +1,6 @@
+// How to generate single file (HTML with all the CSS/JS inside) from React project
+// https://gist.github.com/leodevbro/9cefc7d6b880e42f29685fd9bac636bd
+
 import React from "react";
 import ReactDOM from "react-dom";
 
