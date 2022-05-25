@@ -49,39 +49,39 @@ export const TheFinerPoints: React.FC<{
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("shockResistant"),
+        subHead: t("AndCanHandleHeavyLoads"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("radiantHeat"),
+        subHead: t("idealForHeatFlooring"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("hygienic"),
+        subHead: t("odorFreeAndEasyToClean"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("madeWithCare"),
+        subHead: t("inTheUSA"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
 
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("fireResistant"),
+        subHead: t("withstandsHeatUpTo300"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("noVOCs"),
+        subHead: t("orOtherHarmfulElements"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
       {
-        head: t("resistant"),
-        subHead: t("toScratchesStainsAndChemicals"),
+        head: t("ecoFriendly"),
+        subHead: t("andTreeApproved"),
         icon: <SvgOfFpKnife className={style.icon} />,
       },
     ];
@@ -93,8 +93,10 @@ export const TheFinerPoints: React.FC<{
     return arrayOfDataOfPoints.map((pointObj, i) => {
       return (
         <div key={i} className={style.onePoint}>
-          <div className={style.head}>{pointObj.head}</div>
-          <div className={style.subHead}>{pointObj.subHead}</div>
+          <div className={style.textual}>
+            <div className={style.head}>{pointObj.head}</div>
+            <div className={style.subHead}>{pointObj.subHead}</div>
+          </div>
           {pointObj.icon}
         </div>
       );

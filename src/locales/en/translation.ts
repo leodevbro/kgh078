@@ -39,4 +39,22 @@ export const trEn = {
 
   shockResistant: "Shock-resistant",
   AndCanHandleHeavyLoads: "and can handle heavy loads.",
+
+  radiantHeat: "Radiant Heat",
+  idealForHeatFlooring: "ideal for heat flooring",
+
+  hygienic: "Hygienic",
+  odorFreeAndEasyToClean: "odor-free and easy to clean.",
+
+  madeWithCare: "Made with care",
+  inTheUSA: "in the USA.",
+
+  fireResistant: "Fire resistant",
+  withstandsHeatUpTo300: "withstands heat up to 300°F.",
+
+  noVOCs: "No VOCs",
+  orOtherHarmfulElements: "or other harmful elements.",
+
+  ecoFriendly: "Eco-friendly",
+  andTreeApproved: "and tree approved."
 };
