@@ -117,13 +117,24 @@
       margin-top: 20px;
 
       .swiper-pagination-bullet {
-        background-color: rgb(158, 158, 158);
+        background-color: transparent;
         border-radius: 0px;
         width: 18px;
-        height: 3px;
+        height: 8px;
+
+        display: inline-flex;
+        align-items: center;
 
         &.swiper-pagination-bullet-active {
-          background-color: $black17;
+          .inSwiperBullet {
+            background-color: $black17;
+          }
+        }
+
+        .inSwiperBullet {
+          width: 100%;
+          height: 3px;
+          background-color: rgb(158, 158, 158);
         }
       }
     }

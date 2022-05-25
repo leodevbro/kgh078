@@ -53,7 +53,10 @@ export const SweetSlider: React.FC<{
         pagination={{
           clickable: true,
           renderBullet: function (index, className) {
-            return `<span class="${cla(className, style.bullet)}"></span>`;
+            return `<span class="${cla(
+              className,
+              style.bullet,
+            )}"><span class=${"inSwiperBullet"}></span></span>`;
           },
         }}
         navigation={{

@@ -1,3 +1,11 @@
+The instruction link:
+How to generate a single file (HTML file with all the CSS/JS inside it) from react project:
+https://gist.github.com/leodevbro/9cefc7d6b880e42f29685fd9bac636bd
+
+<br />
+<br />
+<br />
+
 **This project uses Redux-Toolkit (not classic Redux).**
 
 Redux Toolkit uses `immer` to ensure immutable flow of state. This means you no longer need to return `{ ...state }` with every reducer.
