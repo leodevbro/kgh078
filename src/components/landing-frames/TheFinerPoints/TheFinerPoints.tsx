@@ -139,6 +139,10 @@ export const TheFinerPoints: React.FC<{
           )}
         </div>
 
+        <div className={style.footForButton}>
+          <span className={style.shopButton}>{t("shopPlanxCollection")}</span>
+        </div>
+
         {/* <SweetSlider
           classOfSlider={style.superSlider}
           classOfSlide={style.superSlide}

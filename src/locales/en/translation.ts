@@ -32,6 +32,8 @@ export const trEn = {
     "The Planx Collection offers everything you love about wide-plank wood flooring with none of the costly and constant maintenance.",
   downloadTearsheet: "Download Tearsheet",
 
+  shopPlanxCollection: "Shop Planx Collection",
+
   resistant: "Resistant",
   toScratchesStainsAndChemicals: "to scratches, stains and chemicals.",
 
