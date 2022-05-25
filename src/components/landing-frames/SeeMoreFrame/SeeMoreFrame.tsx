@@ -131,6 +131,8 @@ export const SeeMoreFrame: React.FC<{
           slideItems={arrForSlider}
           // leftRightPaddingCss={`clamp(20px, 5%, 96px)`}
         />
+
+        <div className={style.veryFoot}>{t("thePlanxCollectionIsThe")}</div>
       </div>
     </div>
   );
