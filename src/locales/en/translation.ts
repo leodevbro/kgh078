@@ -20,4 +20,8 @@ export const trEn = {
     "The Planx Collection is GreenGuard Certified and manufactured in a zero-emissions facility under strict guidelines, utilizing recycled content, natural materials and chemical-free processes.",
   gallery: "Gallery",
   wantToSeeMoreWoodLookTile: "Want to see more wood look tile?",
+
+  planxIsJustOneOfMany:
+    "Planx is just one of many wood look styles from Bedrosians. Get inspired by our complete catalog for flooring, walls and more.",
+  shopAllWoodLooks: "Shop All Wood Looks",
 };

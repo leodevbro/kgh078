@@ -5,9 +5,8 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./SeeMoreFrame.module.scss";
 
-import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
-import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
-import pathOfTile1 from "src/styling-constants/raster-items/plank1.png";
+import { imgs } from "src/imglinks";
+
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
 import { IPlusObject, PlusBox } from "src/components/PlusBox/PlusBox";
 
@@ -26,9 +25,9 @@ export const SeeMoreFrame: React.FC<{
       {
         id: "0",
         name: "Collection Name 1",
-        slideImagePath: pathOfNestLoft,
+        slideImagePath: imgs.collection_1_2x,
         plusBox: {
-          imgSrc: pathOfTile1,
+          imgSrc: imgs.color_acorn_2x,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -37,9 +36,9 @@ export const SeeMoreFrame: React.FC<{
       {
         id: "1",
         name: "Collection Name 2",
-        slideImagePath: pathOfAcornCucina,
+        slideImagePath: imgs.collection_2_2x,
         plusBox: {
-          imgSrc: pathOfTile1,
+          imgSrc: imgs.color_frost_2x,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -48,9 +47,9 @@ export const SeeMoreFrame: React.FC<{
       {
         id: "2",
         name: "Collection Name 3",
-        slideImagePath: pathOfNestLoft,
+        slideImagePath: imgs.collection_3_2x,
         plusBox: {
-          imgSrc: pathOfTile1,
+          imgSrc: imgs.color_nest_2x,
           text1: "Arrowhead",
           text2: "Wood Look Matte",
           text3: "Porcelain Tile",
@@ -114,6 +113,14 @@ export const SeeMoreFrame: React.FC<{
       <div className={style.mainBox}>
         <div className={style.top}>
           <span className={style.title}>{t("wantToSeeMoreWoodLookTile")}</span>
+        </div>
+
+        <div className={style.top2}>
+          <span className={style.info}>{t("planxIsJustOneOfMany")}</span>
+        </div>
+
+        <div className={style.top3}>
+          <span className={style.info}>{t("shopAllWoodLooks")}</span>
         </div>
 
         <SweetSlider
