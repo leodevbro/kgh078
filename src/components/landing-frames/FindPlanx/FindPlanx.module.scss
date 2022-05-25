@@ -4,11 +4,18 @@
   --dist-left-right: clamp(20px, 5%, 96px);
   --column-gap: 92px;
 
+  background-color: rgb(247, 243, 238);
+  padding-top: 120px;
+  padding-bottom: 120px;
+
   margin-bottom: 120px;
 
   @media (max-width: 1400px) {
     margin-bottom: 80px;
     --column-gap: 32px;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   @media (max-width: 500px) {
