@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./GalleryView2.module.scss";
 
-import pathOfNestLoft from "src/styling-constants/raster-items/nest-loft.png";
-import pathOfAcornCucina from "src/styling-constants/raster-items/acorn_cucina.png";
+import { imgs } from "src/imglinks";
+
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
 
 export const GalleryView2: React.FC<{
@@ -16,17 +16,15 @@ export const GalleryView2: React.FC<{
 
   const myImages = useMemo<{ id: string; path: string }[]>(() => {
     const arr: { id: string; path: string }[] = [
-      { id: "0", path: pathOfNestLoft },
-      { id: "1", path: pathOfAcornCucina },
-      { id: "2", path: pathOfNestLoft },
-      { id: "3", path: pathOfAcornCucina },
-      { id: "4", path: pathOfNestLoft },
+      { id: "0", path: imgs.gallery_1_2x },
+      { id: "1", path: imgs.gallery_2_2x },
+      { id: "2", path: imgs.gallery_3_2x },
+      { id: "3", path: imgs.gallery_4_2x },
+      { id: "4", path: imgs.gallery_5_2x },
       //
-      { id: "5", path: pathOfAcornCucina },
-      { id: "6", path: pathOfNestLoft },
-      { id: "7", path: pathOfAcornCucina },
-      { id: "8", path: pathOfNestLoft },
-      { id: "9", path: pathOfAcornCucina },
+      { id: "5", path: imgs.gallery_6_2x },
+      { id: "6", path: imgs.gallery_7_2x },
+      { id: "7", path: imgs.gallery_8_2x },
     ];
 
     return arr;
@@ -50,6 +48,7 @@ export const GalleryView2: React.FC<{
 
         <SweetSlider
           classOfSlider={style.superSlider}
+          classOfSlide={style.superSlide}
           classOfGoLeft={style.goLeft}
           classOfGoRight={style.goRight}
           slideItems={arrForSlider}
