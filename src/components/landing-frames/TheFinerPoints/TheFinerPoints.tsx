@@ -39,25 +39,47 @@ export const TheFinerPoints: React.FC<{
     });
   }, [myImages]);
 
+  const introBox = useMemo(() => {
+    return (
+      <div className={style.intro}>
+        <div className={style.inner}>
+          <div className={style.info1}>
+            <span>{t("justLikeWood")}</span>
+          </div>
+
+          <div className={style.info2}>
+            <span>{t("thePlanxCollectionOffers")}</span>
+          </div>
+
+          <div className={style.downloadTearsheet}>
+            <span className={style.span}>{t("downloadTearsheet")}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }, [t]);
+
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
         <div className={style.top}>
-          <span className={style.title}>{t("gallery")}</span>
+          <span className={style.title}>{t("theFinerPoints")}</span>
         </div>
 
         <div className={style.duoRole}>
+          <div className={style.version1}></div>
 
+          <div className={style.version2}>{introBox}</div>
         </div>
 
-        <SweetSlider
+        {/* <SweetSlider
           classOfSlider={style.superSlider}
           classOfSlide={style.superSlide}
           classOfGoLeft={style.goLeft}
           classOfGoRight={style.goRight}
           slideItems={arrForSlider}
           // leftRightPaddingCss={`clamp(20px, 5%, 96px)`}
-        />
+        /> */}
       </div>
     </div>
   );
