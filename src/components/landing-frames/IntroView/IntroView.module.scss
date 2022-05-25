@@ -23,6 +23,16 @@
 
     min-height: clamp(380px, 50vw, 840px);
 
+    &:hover {
+      .introDescription {
+        clip-path: inset(0% 100% 0% 0% round 0px);
+
+        @media (max-width: 700px) {
+          clip-path: inset(0% 0% 100% 0% round 0px);
+        }
+      }
+    }
+
     .introImg {
       height: 100%;
       width: 100%;
@@ -30,6 +40,7 @@
       left: 0px;
       top: 0px;
       object-fit: cover;
+      // border-radius: 0;
       // object-position: 70% 50%;
       // object-position: 80% 0;
 
@@ -49,6 +60,9 @@
       justify-content: center;
 
       padding: 5%;
+
+      transition: clip-path 0.5s ease-in-out;
+      clip-path: inset(-1% -1% -1% -1% round 0px);
 
       .textView {
         // width: calc(100% - 10%);
