@@ -8,6 +8,7 @@ import { GreenFriendly } from "src/components/landing-frames/GreenFriendly/Green
 import { IntroView } from "src/components/landing-frames/IntroView/IntroView";
 import { PlanxMainInfo } from "src/components/landing-frames/PlanxMainInfo/PlanxMainInfo";
 import { SeeMoreFrame } from "src/components/landing-frames/SeeMoreFrame/SeeMoreFrame";
+import { TheFinerPoints } from "src/components/landing-frames/TheFinerPoints/TheFinerPoints";
 import { TonesView } from "src/components/landing-frames/TonesView/TonesView";
 import { VideoView } from "src/components/landing-frames/VideoView/VideoView";
 // import { AuthFlowEnum, BasicStatusOfUserT, UserRoleEnum } from "src/app/redux-slices/sweetSlice";
@@ -47,6 +48,7 @@ export const TheLanding: React.FC<{}> = () => {
         {/* <GalleryView /> */}
         <GalleryView2 />
         <GreenFriendly />
+        <TheFinerPoints />
         <SeeMoreFrame />
       </div>
     </div>
