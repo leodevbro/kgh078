@@ -48,9 +48,21 @@
 
     .duoRole {
       .version1 {
+        .intro {
+          margin-bottom: 24px;
+          margin-left: var(--dist-left-right);
+          margin-right: var(--dist-left-right);
+        }
       }
 
       .version2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 36px;
+        row-gap: 36px;
+
+        padding-left: var(--dist-left-right);
+        padding-right: var(--dist-left-right);
       }
     }
 
@@ -59,6 +71,8 @@
 }
 
 .intro {
+  grid-column: span 2;
+  grid-row: span 2;
   border-radius: 8px;
   background-color: rgb(250, 250, 250);
   padding: 120px;
@@ -143,6 +157,48 @@
   }
 }
 
+.onePoint {
+  border-top: 1px solid rgb(196, 196, 196);
+  padding: 40px;
+
+  @media (max-width: 1000px) {
+    padding: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .head {
+    margin-bottom: 3px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(50, 50, 49);
+
+    @media (max-width: 1000px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .subHead {
+    margin-bottom: 50px;
+    font-size: 20px;
+    line-height: 28px;
+
+    @media (max-width: 1000px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.icon {
+  @media (max-width: 900px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 .superSlider.superSlider.superSlider.superSlider.superSlider {
   padding-left: calc(var(--dist-left-right) - (var(--column-gap) / 2));
   padding-right: calc(var(--dist-left-right) - (var(--column-gap) / 2));
@@ -150,8 +206,8 @@
   .superSlide {
     // border: 1px solid blue;
     // width: initial;
-    width: 500px;
-    height: 640px;
+    width: 240px;
+    height: auto;
     min-width: 50px;
     min-height: 50px;
     padding-left: calc(var(--column-gap) / 2);
@@ -162,16 +218,18 @@
     // }
 
     @media (max-width: 1000px) {
-      width: 246px;
-      height: 336px;
+      width: 192px;
+      // height: 242px;
     }
   }
 
   .goLeft {
+    display: none;
     left: var(--dist-left-right);
   }
 
   .goRight {
+    display: none;
     right: var(--dist-left-right);
   }
 }

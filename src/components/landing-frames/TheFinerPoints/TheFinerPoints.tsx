@@ -1,43 +1,25 @@
-import React, { useMemo } from "react";
+import React, { ReactNode, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
 
 import { cla } from "src/App";
 import style from "./TheFinerPoints.module.scss";
 
-import { imgs } from "src/imglinks";
+import { ReactComponent as SvgOfFpKnife } from "src/styling-constants/svg-items/fp-knife.svg";
 
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
+import { useMediaQuery } from "react-responsive";
+import { tryWorkaroundForSliderButtons } from "src/i18n";
 
 export const TheFinerPoints: React.FC<{
   className?: string;
 }> = ({ className }) => {
   const { t } = useTranslation();
 
-  const myImages = useMemo<{ id: string; path: string }[]>(() => {
-    const arr: { id: string; path: string }[] = [
-      { id: "0", path: imgs.gallery_1_2x },
-      { id: "1", path: imgs.gallery_2_2x },
-      { id: "2", path: imgs.gallery_3_2x },
-      { id: "3", path: imgs.gallery_4_2x },
-      { id: "4", path: imgs.gallery_5_2x },
-      //
-      { id: "5", path: imgs.gallery_6_2x },
-      { id: "6", path: imgs.gallery_7_2x },
-      { id: "7", path: imgs.gallery_8_2x },
-    ];
-
-    return arr;
-  }, []);
-
-  const arrForSlider = useMemo(() => {
-    return myImages.map((x) => {
-      return {
-        id: x.id,
-        el: <img className={style.slideImage} alt="slide item" src={x.path} />,
-      };
-    });
-  }, [myImages]);
+  const is1004AndDown = useMediaQuery({ query: "(max-width: 1004px)" });
+  useEffect(() => {
+    tryWorkaroundForSliderButtons();
+  }, [is1004AndDown]);
 
   const introBox = useMemo(() => {
     return (
@@ -59,6 +41,75 @@ export const TheFinerPoints: React.FC<{
     );
   }, [t]);
 
+  const arrayOfDataOfPoints = useMemo(() => {
+    const arr: { head: string; subHead: string; icon: ReactNode }[] = [
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+      {
+        head: t("resistant"),
+        subHead: t("toScratchesStainsAndChemicals"),
+        icon: <SvgOfFpKnife className={style.icon} />,
+      },
+    ];
+
+    return arr;
+  }, [t]);
+
+  const thePoints = useMemo(() => {
+    return arrayOfDataOfPoints.map((pointObj, i) => {
+      return (
+        <div key={i} className={style.onePoint}>
+          <div className={style.head}>{pointObj.head}</div>
+          <div className={style.subHead}>{pointObj.subHead}</div>
+          {pointObj.icon}
+        </div>
+      );
+    });
+  }, [arrayOfDataOfPoints]);
+
+  const arrForSlider = useMemo(() => {
+    return thePoints.map((x, i) => {
+      return {
+        id: String(i),
+        el: x,
+      };
+    });
+  }, [thePoints]);
+
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
@@ -67,9 +118,25 @@ export const TheFinerPoints: React.FC<{
         </div>
 
         <div className={style.duoRole}>
-          <div className={style.version1}></div>
+          {is1004AndDown ? (
+            <div className={style.version1}>
+              {introBox}
 
-          <div className={style.version2}>{introBox}</div>
+              <SweetSlider
+                classOfSlider={style.superSlider}
+                classOfSlide={style.superSlide}
+                classOfGoLeft={style.goLeft}
+                classOfGoRight={style.goRight}
+                slideItems={arrForSlider}
+                // leftRightPaddingCss={`clamp(20px, 5%, 96px)`}
+              />
+            </div>
+          ) : (
+            <div className={style.version2}>
+              {introBox}
+              {thePoints}
+            </div>
+          )}
         </div>
 
         {/* <SweetSlider

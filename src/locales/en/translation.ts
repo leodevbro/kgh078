@@ -28,6 +28,13 @@ export const trEn = {
     "The Planx Collection is the perfect solution for achieving the look of wide plank, wood flooring when you don’t want the maintenance of real wood. Made of porcelain, Planx features a honed, matte finish that matches the soft, smooth texture of wood floors. Planx comes in large format, 12”x72” pieces that each offer a unique wood grain, so no two pieces are alike, which means no repeat patterns on your floor. This individuality also helps further create the look of real wood flooring in your space. There are five natural colors in the Planx Collection—Acorn, Bark, Frost, Nest, Meadow—providing an authentic feel of warm and cool tones to fit your style. Planx is designed for flooring throughout your living space, and because of its deep color body, it is resistant to stains, scratches and scuffs, also making it a great choice for high traffic areas like kitchens, entryways and mudrooms. Planx is impervious to bacteria, too, so it’s one less thing you have to worry about harboring germs. The Planx Collection is made in the USA and is GreenGuard Certified. It is manufactured in an eco-friendly facility under rigorous environmental standards, including the use of recycled materials and chemical-free processes.",
   theFinerPoints: "The Finer Points",
   justLikeWood: "Just Like Wood, Without All the Worry",
-  thePlanxCollectionOffers: "The Planx Collection offers everything you love about wide-plank wood flooring with none of the costly and constant maintenance.",
-  downloadTearsheet: "Download Tearsheet"
+  thePlanxCollectionOffers:
+    "The Planx Collection offers everything you love about wide-plank wood flooring with none of the costly and constant maintenance.",
+  downloadTearsheet: "Download Tearsheet",
+
+  resistant: "Resistant",
+  toScratchesStainsAndChemicals: "to scratches, stains and chemicals.",
+
+  shockResistant: "Shock-resistant",
+  AndCanHandleHeavyLoads: "and can handle heavy loads.",
 };
