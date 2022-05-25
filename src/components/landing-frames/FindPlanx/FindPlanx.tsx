@@ -61,6 +61,10 @@ export const FindPlanx: React.FC<{
           <span className={style.title}>{t("findYourPerfectPlanx")}</span>
         </div>
 
+        <div className={style.top2}>
+          <span className={style.text}>{t("startYourSearch")}</span>
+        </div>
+
         <SweetSlider
           classOfSlider={style.superSlider}
           classOfSlide={style.superSlide}
@@ -69,6 +73,10 @@ export const FindPlanx: React.FC<{
           slideItems={arrForSlider}
           // leftRightPaddingCss={`clamp(20px, 5%, 96px)`}
         />
+
+        <div className={style.footForButton}>
+          <span className={style.shopButton}>{t("shopPlanxCollection")}</span>
+        </div>
       </div>
     </div>
   );

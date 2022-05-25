@@ -65,4 +65,6 @@ export const trEn = {
   nest: "Nest",
   bark: "Bark",
   meadow: "Meadow",
+
+  startYourSearch: "Start your search with a few samples.",
 };
