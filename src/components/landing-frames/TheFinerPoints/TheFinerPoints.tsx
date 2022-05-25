@@ -6,6 +6,13 @@ import { cla } from "src/App";
 import style from "./TheFinerPoints.module.scss";
 
 import { ReactComponent as SvgOfFpKnife } from "src/styling-constants/svg-items/fp-knife.svg";
+import { ReactComponent as SvgOfFpEco } from "src/styling-constants/svg-items/fp-eco.svg";
+import { ReactComponent as SvgOfFpFire } from "src/styling-constants/svg-items/fp-fire.svg";
+import { ReactComponent as SvgOfFpHeat } from "src/styling-constants/svg-items/fp-heat.svg";
+import { ReactComponent as SvgOfFpHyg } from "src/styling-constants/svg-items/fp-hyg.svg";
+import { ReactComponent as SvgOfFpNoVoc } from "src/styling-constants/svg-items/fp-no-voc.svg";
+import { ReactComponent as SvgOfFpShock } from "src/styling-constants/svg-items/fp-shock.svg";
+import { ReactComponent as SvgOfFpUsa } from "src/styling-constants/svg-items/fp-usa.svg";
 
 import { SweetSlider } from "src/components/SweetSlider/SweetSlider";
 import { useMediaQuery } from "react-responsive";
@@ -51,38 +58,38 @@ export const TheFinerPoints: React.FC<{
       {
         head: t("shockResistant"),
         subHead: t("AndCanHandleHeavyLoads"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpShock className={style.icon} />,
       },
       {
         head: t("radiantHeat"),
         subHead: t("idealForHeatFlooring"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpHeat className={style.icon} />,
       },
       {
         head: t("hygienic"),
         subHead: t("odorFreeAndEasyToClean"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpHyg className={style.icon} />,
       },
       {
         head: t("madeWithCare"),
         subHead: t("inTheUSA"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpUsa className={style.icon} />,
       },
 
       {
         head: t("fireResistant"),
         subHead: t("withstandsHeatUpTo300"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpFire className={style.icon} />,
       },
       {
         head: t("noVOCs"),
         subHead: t("orOtherHarmfulElements"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpNoVoc className={style.icon} />,
       },
       {
         head: t("ecoFriendly"),
         subHead: t("andTreeApproved"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpEco className={style.icon} />,
       },
     ];
 
