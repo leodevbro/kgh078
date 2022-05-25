@@ -109,4 +109,23 @@
       background-color: (248, 248, 248);
     }
   }
+
+  :global {
+    .swiper-pagination {
+      position: relative;
+      // bottom: -20px;
+      margin-top: 20px;
+
+      .swiper-pagination-bullet {
+        background-color: rgb(158, 158, 158);
+        border-radius: 0px;
+        width: 18px;
+        height: 3px;
+
+        &.swiper-pagination-bullet-active {
+          background-color: $black17;
+        }
+      }
+    }
+  }
 }

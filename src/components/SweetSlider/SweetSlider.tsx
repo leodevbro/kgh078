@@ -13,10 +13,12 @@ import {
 // Direct React component imports
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 
+import { Pagination } from "swiper";
+
 // Styles must use direct files imports
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
-// import "swiper/modules/pagination/pagination.scss"; // Pagination module
+import "swiper/modules/pagination/pagination.scss"; // Pagination module
 
 import { ReactComponent as SvgOfArrowRight } from "src/styling-constants/svg-items/arrow-right-3.svg";
 
@@ -48,17 +50,17 @@ export const SweetSlider: React.FC<{
         slidesPerGroup={1}
         loop={false}
         loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
+        pagination={{
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${cla(className, style.bullet)}"></span>`;
+          },
+        }}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
         }}
-        modules={[
-          // Pagination,
-          Navigation,
-        ]}
+        modules={[Pagination, Navigation]}
         className={cla(style.mySwiper, classOfSlider)}
         style={
           leftRightPaddingCss
