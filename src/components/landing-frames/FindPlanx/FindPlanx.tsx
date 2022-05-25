@@ -14,30 +14,45 @@ export const FindPlanx: React.FC<{
 }> = ({ className }) => {
   const { t } = useTranslation();
 
-  const myImages = useMemo<{ id: string; path: string }[]>(() => {
-    const arr: { id: string; path: string }[] = [
-      { id: "0", path: imgs.gallery_1_2x },
-      { id: "1", path: imgs.gallery_2_2x },
-      { id: "2", path: imgs.gallery_3_2x },
-      { id: "3", path: imgs.gallery_4_2x },
-      { id: "4", path: imgs.gallery_5_2x },
-      //
-      { id: "5", path: imgs.gallery_6_2x },
-      { id: "6", path: imgs.gallery_7_2x },
-      { id: "7", path: imgs.gallery_8_2x },
+  const myData = useMemo(() => {
+    const arr: { id: string; imgPath: string; headText: string; footText: string }[] = [
+      { id: "0", imgPath: imgs.sample_frost_2x, headText: t("frost"), footText: t("orderSample") },
+      { id: "1", imgPath: imgs.sample_acorn_2x, headText: t("acorn"), footText: t("orderSample") },
+      { id: "2", imgPath: imgs.sample_nest_2x, headText: t("nest"), footText: t("orderSample") },
+      { id: "3", imgPath: imgs.sample_bark_2x, headText: t("bark"), footText: t("orderSample") },
+      {
+        id: "4",
+        imgPath: imgs.sample_meadow_2x,
+        headText: t("meadow"),
+        footText: t("orderSample"),
+      },
     ];
 
     return arr;
-  }, []);
+  }, [t]);
 
   const arrForSlider = useMemo(() => {
-    return myImages.map((x) => {
+    return myData.map((x) => {
       return {
         id: x.id,
-        el: <img className={style.slideImage} alt="slide item" src={x.path} />,
+        el: (
+          <div className={style.elOfSlide}>
+            <div className={style.head}>
+              <span className={style.span}>{x.headText}</span>
+            </div>
+
+            <div className={style.mid}>
+              <img className={style.slideImage} alt="slide item" src={x.imgPath} />
+            </div>
+
+            <div className={style.foot}>
+              <span className={style.span}>{x.footText}</span>
+            </div>
+          </div>
+        ),
       };
     });
-  }, [myImages]);
+  }, [myData]);
 
   return (
     <div className={cla(style.ground, className)}>

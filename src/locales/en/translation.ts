@@ -11,7 +11,6 @@ export const trEn = {
   woodTonesAndWarmVibes: "Wood Tones and Warm Vibes",
   thePlanxCollectionEffortlesslyCaptures:
     "The Planx Collection effortlessly captures the look of real wood, both in color and scale. Made of porcelain in impressive 12”x72” formats, Planx offers an organic palette enhanced by its soft, matte finish and deep color body that scoffs at potential scuffs. And with a unique wood grain on every piece, there are no duplicate patterns on your floor.",
-  frost: "Frost",
 
   shopThisLook: "Shop this look",
 
@@ -57,5 +56,13 @@ export const trEn = {
 
   ecoFriendly: "Eco-friendly",
   andTreeApproved: "and tree approved.",
-  findYourPerfectPlanx: "Find Your Perfect Planx"
+  findYourPerfectPlanx: "Find Your Perfect Planx",
+
+  orderSample: "Order Sample",
+
+  frost: "Frost",
+  acorn: "Acorn",
+  nest: "Nest",
+  bark: "Bark",
+  meadow: "Meadow",
 };
