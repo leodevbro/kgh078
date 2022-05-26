@@ -50,6 +50,13 @@
   padding-left: calc(var(--dist-left-right) - (var(--column-gap) / 2));
   padding-right: calc(var(--dist-left-right) - (var(--column-gap) / 2));
 
+  &:hover {
+    .goLeft,
+    .goRight {
+      opacity: 1;
+    }
+  }
+
   .superSlide {
     // border: 1px solid blue;
     // width: initial;
@@ -71,10 +78,14 @@
   }
 
   .goLeft {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
     left: var(--dist-left-right);
   }
 
   .goRight {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
     right: var(--dist-left-right);
   }
 }
