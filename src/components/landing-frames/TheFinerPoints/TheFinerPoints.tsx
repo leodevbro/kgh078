@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { cla } from "src/App";
 import style from "./TheFinerPoints.module.scss";
 
-import { ReactComponent as SvgOfFpKnife } from "src/styling-constants/svg-items/fp-knife.svg";
+import { ReactComponent as SvgOfFpKnife2 } from "src/styling-constants/svg-items/fp-knife2.svg";
 import { ReactComponent as SvgOfFpEco } from "src/styling-constants/svg-items/fp-eco.svg";
 import { ReactComponent as SvgOfFpFire } from "src/styling-constants/svg-items/fp-fire.svg";
 import { ReactComponent as SvgOfFpHeat } from "src/styling-constants/svg-items/fp-heat.svg";
@@ -53,7 +53,7 @@ export const TheFinerPoints: React.FC<{
       {
         head: t("resistant"),
         subHead: t("toScratchesStainsAndChemicals"),
-        icon: <SvgOfFpKnife className={style.icon} />,
+        icon: <SvgOfFpKnife2 className={style.icon} />,
       },
       {
         head: t("shockResistant"),
