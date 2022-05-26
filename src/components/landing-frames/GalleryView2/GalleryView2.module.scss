@@ -53,8 +53,8 @@
   .superSlide {
     // border: 1px solid blue;
     // width: initial;
-    width: 500px;
-    height: 640px;
+    width: auto;
+    height: auto;
     min-width: 50px;
     min-height: 50px;
     padding-left: calc(var(--column-gap) / 2);
@@ -64,10 +64,10 @@
     // padding-right: calc(var(--column-gap) / 2);
     // }
 
-    @media (max-width: 1000px) {
-      width: 246px;
-      height: 336px;
-    }
+    // @media (max-width: 1000px) {
+    //   width: 246px;
+    //   height: 336px;
+    // }
   }
 
   .goLeft {
@@ -80,12 +80,17 @@
 }
 
 .slideImage {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 640px;
   border-radius: 12px;
   object-fit: cover;
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    width: 246px;
+    height: 335px;
   }
 }
