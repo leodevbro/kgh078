@@ -35,12 +35,17 @@
       .title {
         color: $black17;
         font-weight: 500;
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 68px;
+        line-height: 76px;
         text-align: center;
 
         @media (max-width: 1000px) {
-          font-size: 28px;
+          font-size: 40px;
+          line-height: 44px;
+        }
+
+        @media (max-width: 500px) {
+          font-size: 32px;
           line-height: 36px;
         }
       }
