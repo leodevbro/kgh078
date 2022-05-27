@@ -1,4 +1,6 @@
-function ScrollObservable() {
+
+export function ScrollObservable() {
+  // @ts-ignore
   this._observers = [];
 
   // using RAF as a petty debounce
@@ -8,13 +10,14 @@ function ScrollObservable() {
     inProgress = true;
 
     window.requestAnimationFrame(() => {
+      // @ts-ignore
       this._process();
 
       inProgress = false;
     });
   };
 
-  window.document.querySelector(".appBody").addEventListener("scroll", handler);
+  window.document.querySelector(".appBody")?.addEventListener("scroll", handler);
 }
 
 ScrollObservable.prototype._process = function () {
@@ -31,6 +34,10 @@ ScrollObservable.prototype._process = function () {
 
   const wrap = document.querySelector(".vid-content");
 
+  if (!wrap) {
+    return;
+  }
+
   const distanceFromTop = window.scrollY + wrap.getBoundingClientRect().top;
   const rawPercentScrolled =
     (window.scrollY - distanceFromTop) / (wrap.scrollHeight - window.innerHeight);
@@ -41,12 +48,12 @@ ScrollObservable.prototype._process = function () {
   this.publish(scrolledPercentage);
 };
 
-ScrollObservable.prototype.subscribe = function (observer) {
+ScrollObservable.prototype.subscribe = function (observer: any) {
   this._observers.push(observer);
 };
 
-ScrollObservable.prototype.publish = function (value) {
-  this._observers.forEach((observer) => {
+ScrollObservable.prototype.publish = function (value: any) {
+  this._observers.forEach((observer: any) => {
     observer.next(value);
   });
 };

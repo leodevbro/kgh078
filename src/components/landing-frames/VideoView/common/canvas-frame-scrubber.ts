@@ -1,9 +1,10 @@
-const CanvasFrameScrubber = (() => {
-    const create = (context, frames) => {
+
+export const CanvasFrameScrubber = (() => {
+    const create = (context: any, frames: any[]) => {
         let currentFrame = 0;
 
         const observer = {
-            next: percentage => {
+            next: (percentage: number) => {
                 const frameIndex = Math.floor((percentage * (frames.length - 1)) / 100);
 
                 if (currentFrame === frameIndex) return;

@@ -1,4 +1,5 @@
-const urlEbi = [
+
+export const urlEbi = [
   "https://i.ibb.co/tQKrtM1/image001.jpg",
   "https://i.ibb.co/tQKrtM1/image001.jpg",
   "https://i.ibb.co/6HyjcY5/image002.jpg",
@@ -291,14 +292,14 @@ const urlEbi = [
   "https://i.ibb.co/JxS91qz/image288.jpg",
 ];
 
-const FrameUnpacker = (() => {
-  const unpack = async (options) => {
+export const FrameUnpacker = (() => {
+  const unpack = async (options: any) => {
     const urlPattern = options.urlPattern,
       start = options.start,
       end = options.end,
       padding = options.padding;
 
-    const bitmaps = [];
+    const bitmaps: any[] = [];
     const calls = []; // ::-:
 
     const timeStart = performance.now();
@@ -334,11 +335,11 @@ const FrameUnpacker = (() => {
     });
 
     // once that's done, construct an array of just frames that would be returned
-    const frames = [];
+    const frames: any[] = [];
     bitmaps.map((bitmap) => frames.push(bitmap.bitmap));
 
     const timeDelta = performance.now() - timeStart;
-    log(`Average extraction time per frame: ${timeDelta / (end - start)}ms`);
+    console.log(`Average extraction time per frame: ${timeDelta / (end - start)}ms`);
 
     return frames;
   };

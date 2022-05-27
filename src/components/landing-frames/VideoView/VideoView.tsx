@@ -4,7 +4,10 @@ import React, { useCallback, useEffect, useRef } from "react";
 // import ReactDOM from 'react-dom';
 
 import { cla } from "src/App";
+import { hh33 } from "./video-server-frames/assets/main";
 import style from "./VideoView.module.scss";
+
+
 
 export const VideoView: React.FC<{
   className?: string;
@@ -87,17 +90,24 @@ export const VideoView: React.FC<{
     // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      registerVideo(`.${uniC}`, `.${uniC} .${style.myVideo}`);
-    }, 1000);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     registerVideo(`.${uniC}`, `.${uniC} .${style.myVideo}`);
+  //   }, 1000);
 
-    return () => {
-      if (inervalRef.current) {
-        clearInterval(inervalRef.current);
-      }
-    };
-  }, [registerVideo, uniC]);
+  //   return () => {
+  //     if (inervalRef.current) {
+  //       clearInterval(inervalRef.current);
+  //     }
+  //   };
+  // }, [registerVideo, uniC]);
+
+  useEffect(() => {
+    console.log(typeof registerVideo); // just nothing, can be deleted
+    setTimeout(() => {
+      hh33();
+    }, 500);
+  }, [registerVideo]);
 
   return (
     <div className={cla(style.ground, className)}>

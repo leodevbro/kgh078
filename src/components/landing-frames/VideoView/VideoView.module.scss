@@ -37,3 +37,31 @@
     width: 100%;
   }
 }
+
+:global {
+  .vid-content {
+    height: 3000px;
+
+    .canvas-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // max-width: calc(100% - 20px);
+      /* max-height: 80vh; */
+      /* height: auto; */
+      // height: 4000px;
+      // border: 2px solid red;
+      width: 100%;
+
+      position: sticky;
+      top: 0;
+
+      .canvas {
+        // padding-top: 100px;
+
+        width: 100%;
+      }
+    }
+  }
+}

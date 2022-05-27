@@ -1,8 +1,15 @@
-const hh33 = async () => {
+import { CanvasFrameScrubber } from "../../common/canvas-frame-scrubber";
+import { ScrollObservable } from "../../common/scroll-observable";
+import { startProgress, stopProgress } from "../../common/utils";
+import { FrameUnpacker } from "./frame-unpacker";
+
+
+export const hh33 = async () => {
+  console.log("haaaa");
   startProgress();
 
   const videoContainer = document.querySelector("#canvas-container");
-  const framesUrlElement = document.querySelector('input[name="frames-url"]');
+  const framesUrlElement: any = document.querySelector('input[name="frames-url"]');
   if (!videoContainer || !framesUrlElement) {
     // console.log(videoContainer, framesUrlElement);
     throw new Error("Element missing!");
@@ -13,9 +20,9 @@ const hh33 = async () => {
   const framesUrlEnd = parseInt(framesUrlElement.dataset.frameEnd, 10);
   const framesIdPadding = parseInt(framesUrlElement.dataset.frameIdPadding, 10);
 
-  log(`Initializing frames download...`);
+  console.log(`Initializing frames download...`);
 
-  log(`Please be patient. Downloaing ${framesUrlEnd} frames...`);
+  console.log(`Please be patient. Downloaing ${framesUrlEnd} frames...`);
 
   const startTime = Date.now();
 
@@ -28,31 +35,32 @@ const hh33 = async () => {
 
   const endTime = Date.now();
 
-  log(`Took ${(endTime - startTime) / 1000} seconds.`);
+  console.log(`Took ${(endTime - startTime) / 1000} seconds.`);
 
-  log("Painting canvas with first frame...");
+  console.log("Painting canvas with first frame...");
 
   const canvas = document.createElement("canvas");
   canvas.classList.add("canvas");
   canvas.height = frames[0].height;
   canvas.width = frames[0].width;
   const context = canvas.getContext("2d");
-  context.drawImage(frames[0], 0, 0);
+  context?.drawImage(frames[0], 0, 0);
 
   videoContainer.appendChild(canvas);
 
-  log("Setting up scrubber...");
+  console.log("Setting up scrubber...");
 
   const observer = CanvasFrameScrubber.create(context, frames);
 
+  // @ts-ignore
   const observable = new ScrollObservable();
   observable.subscribe(observer);
 
-  log("Ready! Scroll to scrub.");
+  console.log("Ready! Scroll to scrub.");
 
   stopProgress();
 };
 
-setTimeout(() => {
-  hh33();
-}, 3000);
+// setTimeout(() => {
+//   hh33();
+// }, 3000);
