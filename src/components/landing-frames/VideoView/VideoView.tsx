@@ -174,8 +174,8 @@ export const VideoView: React.FC<{
                   value="https://i.ibb.co/{{seu}}/image{{id}}.jpg"
                   // value="https://i.ibb.co/{{se}}"
                   data-frame-start="1"
-                  data-frame-end="288"
-                  // data-frame-end="11"
+                  // data-frame-end="288"
+                  data-frame-end="278"
                   data-frame-id-padding="3"
                 />
               </section>

@@ -54,7 +54,7 @@ ScrollObservable.prototype._process = function () {
   const rawPercentScrolled =
     (window.scrollY - distanceFromTop) / (wrap.scrollHeight - window.innerHeight);
   // console.log(rawPercentScrolled);
-  const scrolledPercentage = 100 * Math.min(Math.max(rawPercentScrolled * 1.5, 0), 1);
+  const scrolledPercentage = 100 * Math.min(Math.max(rawPercentScrolled * 1, 0), 1);
 
   // if (theFrames.sticky && scrolledPercentage > 0 && scrolledPercentage < 100) {
   //   theFrames.sticky.style.position = "fixed";
