@@ -235,11 +235,15 @@
 //   position: relative;
 // }
 
+
+
+// COMMENT OUT IF YOU WANT THIS PROJECT TO BE INJECTED INTO A DIV OF ANOTHER WEBPAGE
+// /*
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
+  //  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -251,6 +255,10 @@ body {
 body {
   height: 100%;
 }
+// */
+
+
+
 
 // safe SCSS to inject in other webpage
 
