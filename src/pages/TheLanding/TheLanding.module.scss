@@ -6,17 +6,18 @@
   background-color: white;
   // padding: clamp(20px, 5%, 96px);
   padding-bottom: 80px;
-  padding-top: 148px;
   display: flex;
   justify-content: center;
 
-  @media (max-width: 1000px) {
-    padding-top: 135px;
-  }
+  // padding-top: 148px;
 
-  @media (max-width: 500px) {
-    padding-top: 116px;
-  }
+  // @media (max-width: 1000px) {
+  //   padding-top: 135px;
+  // }
+
+  // @media (max-width: 500px) {
+  //   padding-top: 116px;
+  // }
 
   .center {
     // max-width: min(1728px, 100%);

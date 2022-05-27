@@ -43,7 +43,8 @@ export const TheLanding: React.FC<{}> = () => {
       <div className={style.center}>
         <IntroView />
         <TonesView />
-        <VideoView />
+        <VideoView uniC="zqaaa1" videoUrl="https://drive.google.com/u/0/uc?id=1a7u7Sm3qNrhw9sNDYEy80wCgxLMh709_&export=download#.mp4" />
+        {/* <VideoView uniC="zqaaa2" videoUrl="https://drive.google.com/u/0/uc?id=18Pcx6EvQd_cJGxuBpL0V8XaaUqIn44G0&export=download#.mp4" /> */}
         <PlanxMainInfo />
         {/* aaaa */}
         {/* <GalleryView /> */}

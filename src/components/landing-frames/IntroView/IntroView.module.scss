@@ -5,11 +5,35 @@
   padding-right: clamp(20px, 5%, 96px);
   margin-bottom: 120px;
 
+  height: 1200px;
+
   @media (max-width: 800px) {
     margin-bottom: 80px;
   }
 
+  .wrapHelp {
+    position: sticky;
+    top: 0;
+
+    .topHelp {
+      height: 148px;
+
+      @media (max-width: 1000px) {
+        height: 135px;
+      }
+
+      @media (max-width: 500px) {
+        height: 116px;
+      }
+
+      @media (max-height: 500px) {
+        height: 26px;
+      }
+    }
+  }
+
   .mainBox {
+    // height: 100vh;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
@@ -25,10 +49,10 @@
 
     &:hover {
       .introDescription {
-        clip-path: inset(0% 100% 0% 0% round 0px);
+        // clip-path: inset(0% 100% 0% 0% round 0px);
 
         @media (max-width: 700px) {
-          clip-path: inset(0% 0% 100% 0% round 0px);
+          // clip-path: inset(0% 0% 100% 0% round 0px);
         }
       }
     }
@@ -61,7 +85,7 @@
 
       padding: 5%;
 
-      transition: clip-path 0.5s ease-in-out;
+      // transition: clip-path 0.5s ease-in-out;
       clip-path: inset(-1% -1% -1% -1% round 0px);
 
       .textView {

@@ -10,11 +10,30 @@
   }
 
   .mainBox {
-    background-color: antiquewhite;
+    // background-color: antiquewhite;
     min-height: 400px;
 
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
+
+.scrollVideoBox {
+  // height: 4000px;
+
+  .content {
+    // height: 100vh;
+    width: 100%;
+    // position: sticky;
+    // top: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+
+  .myVideo {
+    width: 100%;
   }
 }
