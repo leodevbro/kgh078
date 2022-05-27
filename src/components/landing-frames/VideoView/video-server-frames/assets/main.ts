@@ -5,7 +5,6 @@ import { FrameUnpacker } from "./frame-unpacker";
 
 
 export const hh33 = async () => {
-  console.log("haaaa");
   startProgress();
 
   const videoContainer = document.querySelector("#canvas-container");
