@@ -1,3 +1,16 @@
+/*
+
+Source material of scroll video playback:
+            
+https://www.ghosh.dev/posts/playing-with-video-scrubbing-animations-on-the-web/#1-video-current-time-demo
+
+https://video-scrub.playground.ghosh.dev/
+
+https://github.com/abhishekcghosh/experiment-video-scrub
+
+*/
+
+
 import React, { useCallback, useEffect, useRef } from "react";
 // import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
@@ -130,7 +143,19 @@ export const VideoView: React.FC<{
               <p>Your user agent does not support the HTML5 Video element.</p>
             </video> */}
 
-            <div className="vid-content" id="content">
+            {/* 
+
+            Source material of scroll video playback:
+
+            https://www.ghosh.dev/posts/playing-with-video-scrubbing-animations-on-the-web/#1-video-current-time-demo
+
+            https://video-scrub.playground.ghosh.dev/
+
+            https://github.com/abhishekcghosh/experiment-video-scrub
+            
+            */}
+
+            <div className="vid-content2641">
               {/* <p>
                 <a href="../">back</a>
               </p>

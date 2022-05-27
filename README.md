@@ -1,6 +1,19 @@
 The instruction link:
+
 How to generate a single file (HTML file with all the CSS/JS inside it) from react project:
+
 https://gist.github.com/leodevbro/9cefc7d6b880e42f29685fd9bac636bd
+
+<br />
+
+Source material of scroll video playback:
+(We chose the "video-server-frames" method)
+(We extracted jpg images from video using Photoshop)
+https://www.ghosh.dev/posts/playing-with-video-scrubbing-animations-on-the-web/#1-video-current-time-demo
+
+https://video-scrub.playground.ghosh.dev/
+
+https://github.com/abhishekcghosh/experiment-video-scrub
 
 <br />
 <br />

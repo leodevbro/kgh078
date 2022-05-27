@@ -1,3 +1,7 @@
+const theFrames: any = {
+  sticky: null,
+  wrap: null
+};
 
 export function ScrollObservable() {
   // @ts-ignore
@@ -17,7 +21,15 @@ export function ScrollObservable() {
     });
   };
 
-  window.document.querySelector(".appBody")?.addEventListener("scroll", handler);
+  theFrames.sticky = window.document.querySelector(".vid-content2641 .canvas-container");
+  theFrames.wrap = document.querySelector(".vid-content2641");
+
+  const appBody = window.document.querySelector(".appBody");
+  if (appBody && appBody.getBoundingClientRect().height < 2500) {
+    appBody.addEventListener("scroll", handler);
+  } else {
+    window.addEventListener("scroll", handler);
+  }
 }
 
 ScrollObservable.prototype._process = function () {
@@ -32,7 +44,7 @@ ScrollObservable.prototype._process = function () {
 
   // const scrolledPercentage = Math.round((100 * (100 * scrolled)) / (documentHeight - viewportHeight)) / 100;
 
-  const wrap = document.querySelector(".vid-content");
+  const wrap = theFrames.wrap;
 
   if (!wrap) {
     return;
@@ -44,6 +56,12 @@ ScrollObservable.prototype._process = function () {
   // console.log(rawPercentScrolled);
   const scrolledPercentage = 100 * Math.min(Math.max(rawPercentScrolled * 1.5, 0), 1);
 
+  // if (theFrames.sticky && scrolledPercentage > 0 && scrolledPercentage < 100) {
+  //   theFrames.sticky.style.position = "fixed";
+  // } else {
+  //   theFrames.sticky.style.position = "sticky";
+  // }
+  // theFrames.sticky.style.marginTop = `${wrap.scrollHeight * scrolledPercentage / 100}px`
   //   console.log(scrolledPercentage); ::-:
   this.publish(scrolledPercentage);
 };

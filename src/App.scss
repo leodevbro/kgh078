@@ -263,7 +263,7 @@ body {
 .rootoflanding01 {
   // border: 3px solid blue;
   overflow-wrap: anywhere;
-  height: 100%;
+  height: 100%; // --------------
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -411,7 +411,7 @@ body {
       // column-gap: 16px;
       flex-grow: 1;
       flex-shrink: 1;
-      overflow: auto;
+      // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
 
       // DEPRICATED !!!
       .sidebarContainer {
@@ -426,7 +426,7 @@ body {
         // padding: 8px;
         // border: 1px solid blue;
 
-        overflow: auto;
+        // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
 
         max-width: var(--max-width-for-sb-deskt);
         min-width: 0px;
@@ -469,11 +469,12 @@ body {
       }
 
       .appBody {
+        max-width: 100%;
         flex-grow: 1;
         flex-shrink: 1;
 
         // max-height: 100%;
-        overflow: auto;
+        // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
 
         display: flex;
         flex-direction: column;
@@ -579,5 +580,34 @@ body {
     &:hover {
       background-color: rgba(88, 141, 240, 0.842);
     }
+  }
+}
+
+// Works on Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7098ddbe #d5e5ff;
+}
+
+// Works on Chrome
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  // border: 5px solid transparent;
+  // background-clip: content-box;
+  // background-color: rgb(49, 152, 221);
+  background-color: rgba(105, 145, 214, 0.699);
+
+  &:hover {
+    background-color: rgba(88, 141, 240, 0.842);
   }
 }

@@ -58,7 +58,7 @@ export const IntroView: React.FC<{
       const rawPercentScrolled =
         (window.scrollY - distanceFromTop) / (wrap.scrollHeight - window.innerHeight);
       // console.log(window.scrollY, distanceFromTop);
-      const percentScrolled = 100 * Math.min(Math.max(rawPercentScrolled, 0), 1);
+      const percentScrolled = 100 * Math.min(Math.max(rawPercentScrolled * 2, 0), 1);
       // console.log("=", percentScrolled);
       // manip.style.clipPath = `inset(0% ${percentScrolled <= 35 ? 0 : 100}% 0% 0% round 0px)`;
 
