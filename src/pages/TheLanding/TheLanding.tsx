@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FindPlanx } from "src/components/landing-frames/FindPlanx/FindPlanx";
 // import { GalleryView } from "src/components/landing-frames/GalleryView/GalleryView";
 import { GalleryView2 } from "src/components/landing-frames/GalleryView2/GalleryView2";
@@ -24,7 +24,7 @@ import { urlArrayOfVideoFrames } from "src/imglinks";
 import style from "./TheLanding.module.scss";
 // import { CloseButton } from "src/components/CloseButton/CloseButton";
 
-export const TheLanding: React.FC<{}> = () => {
+export const TheLanding: React.FC<{ mainAppBody: HTMLDivElement }> = ({ mainAppBody }) => {
   // const params = useParams();
   // const { t } = useTranslation();
   // const basicStatusOfUser = useAuthCheck();
@@ -39,15 +39,30 @@ export const TheLanding: React.FC<{}> = () => {
 
   // const { t } = useTranslation();
 
-  const mainScrollingBox = useMemo(() => {
-    let scrollingBox: (Window & typeof globalThis) | HTMLDivElement = window;
-    const appBody: HTMLDivElement | null = window.document.querySelector(".appBody");
+  const [videoCanRender, setVideoCanRender] = useState(false);
+  const scrollBoxRef = useRef<(Window & typeof globalThis) | HTMLDivElement>(window);
 
-    if (appBody && appBody.getBoundingClientRect().height < 2500) {
-      scrollingBox = appBody;
-    }
+  useEffect(() => {
+    setTimeout(() => {
+      if (mainAppBody.getBoundingClientRect().height < 2500) {
+        scrollBoxRef.current = mainAppBody;
+      } else {
+        const wrapOfAppBody: HTMLElement | null = document.querySelector(
+          ".rootoflanding01 .appBodyWrap",
+        );
+        const theAppBody: HTMLElement | null = document.querySelector(".rootoflanding01 .appBody");
 
-    return scrollingBox;
+        if (wrapOfAppBody) {
+          wrapOfAppBody.style.overflow = "initial"; // this helps sticky element to work
+        }
+        if (theAppBody) {
+          theAppBody.style.overflow = "initial"; // this helps sticky element to work
+        }
+      }
+      setVideoCanRender((prev) => true);
+    }, 200);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -55,12 +70,15 @@ export const TheLanding: React.FC<{}> = () => {
       <div className={style.center}>
         <IntroView />
         <TonesView />
-        <VideoView
-          frameCount={urlArrayOfVideoFrames.length - 2}
-          scrollingBox={mainScrollingBox}
-          // generalUrlOfImages={"./videos/frames/image{{id}}.jpg"}
-          urlArray={urlArrayOfVideoFrames}
-        />
+        {videoCanRender && (
+          <VideoView
+            frameCount={urlArrayOfVideoFrames.length - 2}
+            scrollingBox={scrollBoxRef.current}
+            // generalUrlOfImages={"./videos/frames/image{{id}}.jpg"}
+            urlArray={urlArrayOfVideoFrames}
+          />
+        )}
+
         <PlanxMainInfo />
         {/* aaaa */}
         {/* <GalleryView /> */}

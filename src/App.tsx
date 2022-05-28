@@ -109,7 +109,10 @@ const App: React.FC = () => {
           <div className={"appBody"} ref={appBodyRef}>
             <div className={"mainBody"}>
               <Routes>
-                <Route path={"/"} element={<TheLanding />} />
+                <Route
+                  path={"/"}
+                  element={appBodyRef.current && <TheLanding mainAppBody={appBodyRef.current} />}
+                />
                 <Route path={"/pages"} element={<Page1 />} />
 
                 <Route element={<ProtectedRoutesWrapper />}>
@@ -126,7 +129,7 @@ const App: React.FC = () => {
                   //     <span>)</span>
                   //   </div>
                   // }
-                  element={<TheLanding />}
+                  element={appBodyRef.current && <TheLanding mainAppBody={appBodyRef.current} />}
                 />
               </Routes>
             </div>

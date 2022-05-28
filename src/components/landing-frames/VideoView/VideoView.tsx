@@ -117,8 +117,10 @@ export const VideoView: React.FC<{
         urlArray: urlArray,
         classOfCanvas: style.canvas,
       });
-    }, 500);
-  }, [scrollingBox, urlArray]);
+    }, 300);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const numPaddingOfFrameId = useMemo(() => {
     if (frameCount <= 999) {

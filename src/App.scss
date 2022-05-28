@@ -235,9 +235,8 @@
 //   position: relative;
 // }
 
-
 body {
-  overflow: initial !important; // without it, the sticky element will not work
+  // overflow: initial !important; // without it, the sticky element will not work
 }
 // COMMENT OUT IF YOU WANT THIS PROJECT TO BE INJECTED INTO A DIV OF ANOTHER WEBPAGE
 // /*
@@ -245,7 +244,7 @@ body {
   margin: 0;
   //  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  //   sans-serif; 
+  //   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -258,9 +257,6 @@ body {
   height: 100%;
 }
 // */
-
-
-
 
 // safe SCSS to inject in other webpage
 
@@ -421,7 +417,7 @@ body {
       // column-gap: 16px;
       flex-grow: 1;
       flex-shrink: 1;
-      // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
+      overflow: auto; // ------------------------------------- may spoil sticky
 
       // DEPRICATED !!!
       .sidebarContainer {
@@ -436,7 +432,7 @@ body {
         // padding: 8px;
         // border: 1px solid blue;
 
-        // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
+        overflow: auto;
 
         max-width: var(--max-width-for-sb-deskt);
         min-width: 0px;
@@ -484,7 +480,7 @@ body {
         flex-shrink: 1;
 
         // max-height: 100%;
-        // overflow: auto; // UNCOMMENT IF YOU WANT INNER COOL SCROLL
+        overflow: auto; // ----------------------------- may spoil sticky
 
         display: flex;
         flex-direction: column;

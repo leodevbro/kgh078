@@ -31,9 +31,8 @@ export const IntroView: React.FC<{
   const registerFn = useCallback(() => {
     const scrollBox = window.document.querySelector(".appBody");
     const wrap = document.querySelector(`.${style.ground}`);
-    const boxToListen = document.querySelector(`.${style.wrapHelp}`) as any;
     const manip = document.querySelector(`.${style.introDescription}`) as any;
-    if (!boxToListen || !wrap || !scrollBox || !manip) {
+    if (!wrap || !scrollBox || !manip) {
       return;
     }
     // video.currentTime = video.duration;
