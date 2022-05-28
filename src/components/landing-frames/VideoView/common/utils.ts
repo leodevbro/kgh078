@@ -1,6 +1,6 @@
 
 // Logging
-export const logContainer = document.getElementById('comments');
+// export const logContainer = document.getElementById('comments');
 // const log = (text: string) => {
 //     if (logContainer) {
 //         logContainer.innerHTML += text + '\n';

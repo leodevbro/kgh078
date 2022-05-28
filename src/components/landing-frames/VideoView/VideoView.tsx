@@ -10,28 +10,41 @@ https://github.com/abhishekcghosh/experiment-video-scrub
 
 */
 
-
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 // import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
 // import ReactDOM from 'react-dom';
 
 import { cla } from "src/App";
-import { hh33 } from "./video-server-frames/assets/main";
+import { loadFramesOfTheVideo } from "./video-server-frames/assets/main";
 import style from "./VideoView.module.scss";
 
-
+// const generateRandomClass = () => {
+//   const randomString = Math.random().toString(36).substring(2, 7); // gyjvo, xd9st
+//   const theClass = style[randomString];
+//   return theClass;
+// };
 
 export const VideoView: React.FC<{
   className?: string;
-  videoUrl: string; // DEPRICATED
-  uniC?: string;
-}> = ({ className, videoUrl, uniC }) => {
+  generalUrlOfImages?: string; // "./videos/frames/image{{id}}.jpg" or "https://i.ibb.co/asgh/image{{id}}.jpg"
+  urlArray?: string[];
+  frameCount: number;
+  scrollingBox: (Window & typeof globalThis) | HTMLDivElement; // window or div
+}> = ({ className, generalUrlOfImages, urlArray, frameCount, scrollingBox }) => {
+  // const randomClassRef = useRef(generateRandomClass());
   // const { t } = useTranslation();
 
   // const isPlayingRef = useRef(false);
 
-  const inervalRef = useRef<NodeJS.Timeout | null | undefined>(null);
+  const groundRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const parentOfStickyRef = useRef<HTMLDivElement>(null);
+  const generalUrlInputRef = useRef<HTMLInputElement>(null);
+
+  // console.log(groundRef.current);
+
+  const intervalRef = useRef<NodeJS.Timeout | null | undefined>(null);
 
   const registerVideo = useCallback((queryOfWrap: string, queryOfVideo: string) => {
     const wrap = document.querySelector(queryOfWrap);
@@ -57,6 +70,7 @@ export const VideoView: React.FC<{
     //   }
     // });
 
+    // for simple mp4 video (may be slow) - not working right now
     const scrollVideo = () => {
       if (video.duration) {
         // console.log(window.scrollY);
@@ -89,18 +103,13 @@ export const VideoView: React.FC<{
 
     // window.addEventListener("scroll", scrollVideo);
     // window.document.querySelector(".appBody")?.addEventListener("scroll", scrollVideo);
-    inervalRef.current = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       scrollVideo();
       // if (!isPlayingRef.current) {
       //   isPlayingRef.current = true;
       //   video.play();
       // }
     }, 41.6);
-
-    /* The encoding is super important here to enable frame-by-frame scrubbing. */
-
-    // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
-    // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
   }, []);
 
   // useEffect(() => {
@@ -117,15 +126,56 @@ export const VideoView: React.FC<{
 
   useEffect(() => {
     console.log(typeof registerVideo); // just nothing, can be deleted
-    setTimeout(() => {
-      hh33();
-    }, 500);
   }, [registerVideo]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (!parentOfStickyRef.current || !stickyRef.current || !generalUrlInputRef.current) {
+        console.log(
+          "one of them is falsy: parentOfStickyRef.current, stickyRef.current, generalUrlInputRef.current",
+        );
+        return;
+      }
+
+      loadFramesOfTheVideo({
+        stickyDiv: stickyRef.current,
+        parentOfSticky: parentOfStickyRef.current,
+        scrollingBox: scrollingBox,
+        inputOfGeneralUrlOfFrames: generalUrlInputRef.current,
+        urlArray: urlArray,
+        classOfCanvas: style.canvas,
+      });
+    }, 500);
+  }, [scrollingBox, urlArray]);
+
+  const numPaddingOfFrameId = useMemo(() => {
+    if (frameCount <= 999) {
+      return 3;
+    } else if (frameCount <= 9999) {
+      return 4;
+    } else if (frameCount <= 99999) {
+      return 5;
+    } else {
+      return 7;
+    }
+  }, [frameCount]);
+
+  const inputVal = useMemo(() => {
+    let val = "";
+
+    if (urlArray && urlArray[0]) {
+      val = urlArray[0];
+    } else if (generalUrlOfImages) {
+      val = generalUrlOfImages;
+    }
+
+    return val;
+  }, [generalUrlOfImages, urlArray]);
+
   return (
-    <div className={cla(style.ground, className)}>
+    <div ref={groundRef} className={cla(style.ground, className)}>
       <div className={style.mainBox}>
-        <div className={cla(style.scrollVideoBox, uniC)}>
+        <div className={cla(style.scrollVideoBox)}>
           <div className={style.content}>
             {/* <video className={style.myVideo} width="600" muted preload={"auto"}>
               <source
@@ -155,7 +205,7 @@ export const VideoView: React.FC<{
             
             */}
 
-            <div className="vid-content2641">
+            <div ref={parentOfStickyRef} className={style.parentOfSticky}>
               {/* <p>
                 <a href="../">back</a>
               </p>
@@ -166,17 +216,18 @@ export const VideoView: React.FC<{
               <section>
                 <pre id="comments"></pre>
               </section> */}
-              <section className="canvas-container" id="canvas-container">
+              <section ref={stickyRef} className={style.theSticky}>
                 <input
+                  ref={generalUrlInputRef}
                   name="frames-url"
                   type="hidden"
                   // value="./videos/frames/image{{id}}.jpg"
-                  value="https://i.ibb.co/{{seu}}/image{{id}}.jpg"
+                  value={inputVal}
                   // value="https://i.ibb.co/{{se}}"
-                  data-frame-start="1"
-                  // data-frame-end="288"
-                  data-frame-end="278"
-                  data-frame-id-padding="3"
+                  data-frame-start={"1"}
+                  // data-frame-end="284"
+                  data-frame-end={frameCount - 1}
+                  data-frame-id-padding={String(numPaddingOfFrameId)}
                 />
               </section>
             </div>

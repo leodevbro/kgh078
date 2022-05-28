@@ -1,9 +1,9 @@
-const theFrames: any = {
-  sticky: null,
-  wrap: null
-};
+export interface IScrollObservable {
+  parentOfSticky: Element;
+  scrollingElement: (Window & typeof globalThis) | Element; // window or specific div
+}
 
-export function ScrollObservable() {
+export function ScrollObservable(myPar: IScrollObservable) {
   // @ts-ignore
   this._observers = [];
 
@@ -15,24 +15,18 @@ export function ScrollObservable() {
 
     window.requestAnimationFrame(() => {
       // @ts-ignore
-      this._process();
+      this._process(myPar.parentOfSticky);
 
       inProgress = false;
     });
   };
 
-  theFrames.sticky = window.document.querySelector(".vid-content2641 .canvas-container");
-  theFrames.wrap = document.querySelector(".vid-content2641");
 
-  const appBody = window.document.querySelector(".appBody");
-  if (appBody && appBody.getBoundingClientRect().height < 2500) {
-    appBody.addEventListener("scroll", handler);
-  } else {
-    window.addEventListener("scroll", handler);
-  }
+
+  myPar.scrollingElement.addEventListener("scroll", handler);
 }
 
-ScrollObservable.prototype._process = function () {
+ScrollObservable.prototype._process = function (parentfSticky: Element) {
   // const viewportHeight = document.documentElement.clientHeight;
   // const documentHeight = document.body.clientHeight;
   // const scrolled = Math.max(
@@ -44,7 +38,7 @@ ScrollObservable.prototype._process = function () {
 
   // const scrolledPercentage = Math.round((100 * (100 * scrolled)) / (documentHeight - viewportHeight)) / 100;
 
-  const wrap = theFrames.wrap;
+  const wrap = parentfSticky;
 
   if (!wrap) {
     return;
@@ -56,11 +50,6 @@ ScrollObservable.prototype._process = function () {
   // console.log(rawPercentScrolled);
   const scrolledPercentage = 100 * Math.min(Math.max(rawPercentScrolled * 1, 0), 1);
 
-  // if (theFrames.sticky && scrolledPercentage > 0 && scrolledPercentage < 100) {
-  //   theFrames.sticky.style.position = "fixed";
-  // } else {
-  //   theFrames.sticky.style.position = "sticky";
-  // }
   // theFrames.sticky.style.marginTop = `${wrap.scrollHeight * scrolledPercentage / 100}px`
   //   console.log(scrolledPercentage); ::-:
   this.publish(scrolledPercentage);

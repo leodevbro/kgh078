@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { FindPlanx } from "src/components/landing-frames/FindPlanx/FindPlanx";
 // import { GalleryView } from "src/components/landing-frames/GalleryView/GalleryView";
 import { GalleryView2 } from "src/components/landing-frames/GalleryView2/GalleryView2";
@@ -12,6 +12,7 @@ import { SeeMoreFrame } from "src/components/landing-frames/SeeMoreFrame/SeeMore
 import { TheFinerPoints } from "src/components/landing-frames/TheFinerPoints/TheFinerPoints";
 import { TonesView } from "src/components/landing-frames/TonesView/TonesView";
 import { VideoView } from "src/components/landing-frames/VideoView/VideoView";
+import { urlArrayOfVideoFrames } from "src/imglinks";
 // import { AuthFlowEnum, BasicStatusOfUserT, UserRoleEnum } from "src/app/redux-slices/sweetSlice";
 // import { useAuthCheck } from "src/app/routing/ProtectedRoutes";
 
@@ -38,13 +39,28 @@ export const TheLanding: React.FC<{}> = () => {
 
   // const { t } = useTranslation();
 
+  const mainScrollingBox = useMemo(() => {
+    let scrollingBox: (Window & typeof globalThis) | HTMLDivElement = window;
+    const appBody: HTMLDivElement | null = window.document.querySelector(".appBody");
+
+    if (appBody && appBody.getBoundingClientRect().height < 2500) {
+      scrollingBox = appBody;
+    }
+
+    return scrollingBox;
+  }, []);
+
   return (
     <div className={style.ground}>
       <div className={style.center}>
         <IntroView />
         <TonesView />
-        <VideoView uniC="zqaaa1" videoUrl="https://drive.google.com/u/0/uc?id=1a7u7Sm3qNrhw9sNDYEy80wCgxLMh709_&export=download#.mp4" />
-        {/* <VideoView uniC="zqaaa2" videoUrl="https://drive.google.com/u/0/uc?id=18Pcx6EvQd_cJGxuBpL0V8XaaUqIn44G0&export=download#.mp4" /> */}
+        <VideoView
+          frameCount={urlArrayOfVideoFrames.length - 2}
+          scrollingBox={mainScrollingBox}
+          // generalUrlOfImages={"./videos/frames/image{{id}}.jpg"}
+          urlArray={urlArrayOfVideoFrames}
+        />
         <PlanxMainInfo />
         {/* aaaa */}
         {/* <GalleryView /> */}
