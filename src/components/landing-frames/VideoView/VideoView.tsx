@@ -54,22 +54,6 @@ export const VideoView: React.FC<{
       return;
     }
 
-    // video.addEventListener('ended', (event) => {
-    //   video.currentTime = 0;
-    //   isPlayingRef.current = false;
-    // });
-    // video.currentTime = video.duration;
-
-    // 0, 2.5, 5.7, 9, 12.4
-
-    // 41.6
-
-    // video.addEventListener("timeupdate", function () {
-    //   if (video.currentTime > 2.5) {
-    //     video.pause();
-    //   }
-    // });
-
     // for simple mp4 video (may be slow) - not working right now
     const scrollVideo = () => {
       if (video.duration) {
@@ -82,19 +66,6 @@ export const VideoView: React.FC<{
         // console.log("-", percentScrolled);
 
         video.currentTime = video.duration * percentScrolled;
-
-        // console.log(percentScrolled);
-        // if (percentScrolled > 0 && percentScrolled < 1) {
-        //   if (!isPlayingRef.current) {
-        //     isPlayingRef.current = true;
-        //     video.play();
-        //   }
-        // }
-
-        // video.play();
-        // setTimeout(() => {
-        //   video.pause();
-        // }, 1000);
       }
 
       // requestAnimationFrame(scrollVideo);
@@ -112,6 +83,7 @@ export const VideoView: React.FC<{
     }, 41.6);
   }, []);
 
+  // to run registerVideo fn - currently just for my memo
   // useEffect(() => {
   //   setTimeout(() => {
   //     registerVideo(`.${uniC}`, `.${uniC} .${style.myVideo}`);
@@ -125,7 +97,7 @@ export const VideoView: React.FC<{
   // }, [registerVideo, uniC]);
 
   useEffect(() => {
-    console.log(typeof registerVideo); // just nothing, can be deleted
+    console.log(typeof registerVideo); // just for my memo
   }, [registerVideo]);
 
   useEffect(() => {
@@ -193,29 +165,7 @@ export const VideoView: React.FC<{
               <p>Your user agent does not support the HTML5 Video element.</p>
             </video> */}
 
-            {/* 
-
-            Source material of scroll video playback:
-
-            https://www.ghosh.dev/posts/playing-with-video-scrubbing-animations-on-the-web/#1-video-current-time-demo
-
-            https://video-scrub.playground.ghosh.dev/
-
-            https://github.com/abhishekcghosh/experiment-video-scrub
-            
-            */}
-
             <div ref={parentOfStickyRef} className={style.parentOfSticky}>
-              {/* <p>
-                <a href="../">back</a>
-              </p>
-              <h1>Video Scrubbing</h1>
-              <h2>
-                <code>video-server-frames</code>
-              </h2>
-              <section>
-                <pre id="comments"></pre>
-              </section> */}
               <section ref={stickyRef} className={style.theSticky}>
                 <input
                   ref={generalUrlInputRef}
@@ -223,7 +173,6 @@ export const VideoView: React.FC<{
                   type="hidden"
                   // value="./videos/frames/image{{id}}.jpg"
                   value={inputVal}
-                  // value="https://i.ibb.co/{{se}}"
                   data-frame-start={"1"}
                   // data-frame-end="284"
                   data-frame-end={frameCount - 1}
