@@ -50,8 +50,9 @@ export const TheLanding: React.FC<{
       if (mainAppBody.getBoundingClientRect().height < 2500) {
         scrollBoxRef.current = mainAppBody;
       } else {
-        // wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
-        // mainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        mainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        (document.querySelector(":root") as HTMLElement).style.overflow = "initial"; // this helps sticky element to work
       }
       setVideoCanRender((prev) => true);
     }, 200);

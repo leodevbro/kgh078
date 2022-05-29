@@ -235,8 +235,8 @@
 //   position: relative;
 // }
 
-// body {
-// overflow: initial !important; // without it, the sticky element may not work
+// :root {
+//   overflow: initial !important; // without it, the sticky element may not work
 // }
 
 // COMMENT OUT IF YOU WANT THIS PROJECT TO BE INJECTED INTO A DIV OF ANOTHER WEBPAGE

@@ -6,6 +6,12 @@ interface IUseMyCoolSticky {
   scrollWindow?: (Window & typeof globalThis) | HTMLElement | null;
 }
 
+
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!
+// DEPRICATED !!!!!!!!!!!!!!!!!!!!!!!!!
 export const useMyCoolSticky = (myPar: IUseMyCoolSticky) => {
   const myFn = useCallback(() => {
     if (!myPar.parentOfSticky || !myPar.theSticky) {

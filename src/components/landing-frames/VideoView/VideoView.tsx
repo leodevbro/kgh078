@@ -16,7 +16,7 @@ import React, { useCallback, useEffect, useMemo, useRef } from "react";
 // import ReactDOM from 'react-dom';
 
 import { cla } from "src/App";
-import { useMyCoolSticky } from "src/components/hooks/some-hooks";
+// import { useMyCoolSticky } from "src/components/hooks/some-hooks";
 import { loadFramesOfTheVideo } from "./video-server-frames/assets/main";
 import style from "./VideoView.module.scss";
 
@@ -144,11 +144,11 @@ export const VideoView: React.FC<{
     return val;
   }, [generalUrlOfImages, urlArray]);
 
-  useMyCoolSticky({
-    parentOfSticky: parentOfStickyRef.current,
-    scrollWindow: scrollingBox,
-    theSticky: stickyRef.current,
-  });
+  // useMyCoolSticky({
+  //   parentOfSticky: parentOfStickyRef.current,
+  //   scrollWindow: scrollingBox,
+  //   theSticky: stickyRef.current,
+  // });
 
   return (
     <div className={cla(style.ground, className)}>

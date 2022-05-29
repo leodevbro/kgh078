@@ -11,7 +11,7 @@ import { imgs } from "src/imglinks";
 // import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
 import { IPlusObject, PlusBox } from "src/components/PlusBox/PlusBox";
 import { useMediaQuery } from "react-responsive";
-import { useMyCoolSticky } from "src/components/hooks/some-hooks";
+// import { useMyCoolSticky } from "src/components/hooks/some-hooks";
 
 export const IntroView: React.FC<{
   className?: string;
@@ -92,11 +92,11 @@ export const IntroView: React.FC<{
     }, 100);
   }, [registerFn]);
 
-  useMyCoolSticky({
-    parentOfSticky: parentOfStickyRef.current,
-    scrollWindow: scrollingBox,
-    theSticky: stickyRef.current,
-  });
+  // useMyCoolSticky({
+  //   parentOfSticky: parentOfStickyRef.current,
+  //   scrollWindow: scrollingBox,
+  //   theSticky: stickyRef.current,
+  // });
 
   return (
     <div className={cla(style.ground, className)}>
