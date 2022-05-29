@@ -53,6 +53,7 @@ const App: React.FC = () => {
   const { i18n } = useTranslation();
 
   const appBodyRef = useRef<HTMLDivElement>(null);
+  const wrapOfAppBodyRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
 
   const storeOfStates = useAppSelector((store) => store);
@@ -81,6 +82,10 @@ const App: React.FC = () => {
     changeLangAttributeOnRoot(i18n.language as LangsT);
   }, [i18n.language]);
 
+  const land = appBodyRef.current && wrapOfAppBodyRef.current && (
+    <TheLanding wrapOfMainAppBody={wrapOfAppBodyRef.current} mainAppBody={appBodyRef.current} />
+  );
+
   return (
     <div className={"AppWrap"}>
       <SweetArrow
@@ -101,7 +106,7 @@ const App: React.FC = () => {
 
         <div className="appTop">{/* <TopRibbon /> */}</div>
 
-        <div className={"appBodyWrap"}>
+        <div className={"appBodyWrap"} ref={wrapOfAppBodyRef}>
           {/* <div className={cla("sidebarContainer2", showSb ? "showSb" : "hideSb")}> */}
           {/* <Sidebar3 /> */}
           {/* </div> */}
@@ -109,10 +114,7 @@ const App: React.FC = () => {
           <div className={"appBody"} ref={appBodyRef}>
             <div className={"mainBody"}>
               <Routes>
-                <Route
-                  path={"/"}
-                  element={appBodyRef.current && <TheLanding mainAppBody={appBodyRef.current} />}
-                />
+                <Route path={"/"} element={land} />
                 <Route path={"/pages"} element={<Page1 />} />
 
                 <Route element={<ProtectedRoutesWrapper />}>
@@ -129,7 +131,7 @@ const App: React.FC = () => {
                   //     <span>)</span>
                   //   </div>
                   // }
-                  element={appBodyRef.current && <TheLanding mainAppBody={appBodyRef.current} />}
+                  element={land}
                 />
               </Routes>
             </div>

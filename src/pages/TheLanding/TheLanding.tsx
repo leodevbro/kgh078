@@ -24,7 +24,10 @@ import { urlArrayOfVideoFrames } from "src/imglinks";
 import style from "./TheLanding.module.scss";
 // import { CloseButton } from "src/components/CloseButton/CloseButton";
 
-export const TheLanding: React.FC<{ mainAppBody: HTMLDivElement }> = ({ mainAppBody }) => {
+export const TheLanding: React.FC<{
+  mainAppBody: HTMLDivElement;
+  wrapOfMainAppBody: HTMLDivElement;
+}> = ({ mainAppBody, wrapOfMainAppBody }) => {
   // const params = useParams();
   // const { t } = useTranslation();
   // const basicStatusOfUser = useAuthCheck();
@@ -47,17 +50,8 @@ export const TheLanding: React.FC<{ mainAppBody: HTMLDivElement }> = ({ mainAppB
       if (mainAppBody.getBoundingClientRect().height < 2500) {
         scrollBoxRef.current = mainAppBody;
       } else {
-        const wrapOfAppBody: HTMLElement | null = document.querySelector(
-          ".rootoflanding01 .appBodyWrap",
-        );
-        const theAppBody: HTMLElement | null = document.querySelector(".rootoflanding01 .appBody");
-
-        if (wrapOfAppBody) {
-          wrapOfAppBody.style.overflow = "initial"; // this helps sticky element to work
-        }
-        if (theAppBody) {
-          theAppBody.style.overflow = "initial"; // this helps sticky element to work
-        }
+        wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        mainAppBody.style.overflow = "initial"; // this helps sticky element to work
       }
       setVideoCanRender((prev) => true);
     }, 200);
