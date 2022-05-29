@@ -239,6 +239,30 @@
 //   overflow: initial !important; // without it, the sticky element may not work
 // }
 
+// for host page (Bedrosians stage):
+.footer.footer.footer {
+  .footer-container .logo-list {
+    width: 100%;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    row-gap: 10px;
+    column-gap: 10px;
+
+    .logos {
+      min-width: 160px;
+      min-height: 72px;
+    }
+  }
+
+  .icons-container {
+    flex-wrap: wrap;
+  }
+}
+
+.ng-scope .site-header-menu-buttons {
+  flex-wrap: wrap;
+}
+
 // COMMENT OUT IF YOU WANT THIS PROJECT TO BE INJECTED INTO A DIV OF ANOTHER WEBPAGE
 // /*
 body {
