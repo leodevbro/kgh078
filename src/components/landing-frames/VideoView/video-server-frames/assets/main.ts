@@ -7,7 +7,7 @@ interface ILoadFramesOfTheVideo {
   stickyDiv: HTMLDivElement;
   parentOfSticky: HTMLDivElement;
   inputOfGeneralUrlOfFrames: HTMLInputElement;
-  scrollingBox: (Window & typeof globalThis) | HTMLDivElement;
+  scrollingBox: (Window & typeof globalThis) | HTMLElement;
   classOfCanvas: string;
   urlArray?: string[];
 }

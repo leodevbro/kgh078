@@ -25,8 +25,8 @@ import style from "./TheLanding.module.scss";
 // import { CloseButton } from "src/components/CloseButton/CloseButton";
 
 export const TheLanding: React.FC<{
-  mainAppBody: HTMLDivElement;
-  wrapOfMainAppBody: HTMLDivElement;
+  mainAppBody: HTMLElement;
+  wrapOfMainAppBody: HTMLElement;
 }> = ({ mainAppBody, wrapOfMainAppBody }) => {
   // const params = useParams();
   // const { t } = useTranslation();
@@ -43,15 +43,15 @@ export const TheLanding: React.FC<{
   // const { t } = useTranslation();
 
   const [videoCanRender, setVideoCanRender] = useState(false);
-  const scrollBoxRef = useRef<(Window & typeof globalThis) | HTMLDivElement>(window);
+  const scrollBoxRef = useRef<(Window & typeof globalThis) | HTMLElement>(window);
 
   useEffect(() => {
     setTimeout(() => {
       if (mainAppBody.getBoundingClientRect().height < 2500) {
         scrollBoxRef.current = mainAppBody;
       } else {
-        wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
-        mainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        // wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
+        // mainAppBody.style.overflow = "initial"; // this helps sticky element to work
       }
       setVideoCanRender((prev) => true);
     }, 200);
@@ -62,7 +62,7 @@ export const TheLanding: React.FC<{
   return (
     <div className={style.ground}>
       <div className={style.center}>
-        <IntroView />
+        <IntroView scrollingBox={scrollBoxRef.current} />
         <TonesView />
         {videoCanRender && (
           <VideoView

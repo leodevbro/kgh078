@@ -16,6 +16,7 @@ import React, { useCallback, useEffect, useMemo, useRef } from "react";
 // import ReactDOM from 'react-dom';
 
 import { cla } from "src/App";
+import { useMyCoolSticky } from "src/components/hooks/some-hooks";
 import { loadFramesOfTheVideo } from "./video-server-frames/assets/main";
 import style from "./VideoView.module.scss";
 
@@ -30,19 +31,16 @@ export const VideoView: React.FC<{
   generalUrlOfImages?: string; // "./videos/frames/image{{id}}.jpg" or "https://i.ibb.co/asgh/image{{id}}.jpg"
   urlArray?: string[];
   frameCount: number;
-  scrollingBox: (Window & typeof globalThis) | HTMLDivElement; // window or div
+  scrollingBox: (Window & typeof globalThis) | HTMLElement; // window or div
 }> = ({ className, generalUrlOfImages, urlArray, frameCount, scrollingBox }) => {
   // const randomClassRef = useRef(generateRandomClass());
   // const { t } = useTranslation();
 
   // const isPlayingRef = useRef(false);
 
-  const groundRef = useRef<HTMLDivElement>(null);
-  const stickyRef = useRef<HTMLDivElement>(null);
-  const parentOfStickyRef = useRef<HTMLDivElement>(null);
-  const generalUrlInputRef = useRef<HTMLInputElement>(null);
-
-  // console.log(groundRef.current);
+  const stickyRef = useRef<HTMLDivElement | null>(null);
+  const parentOfStickyRef = useRef<HTMLDivElement | null>(null);
+  const generalUrlInputRef = useRef<HTMLInputElement | null>(null);
 
   const intervalRef = useRef<NodeJS.Timeout | null | undefined>(null);
 
@@ -146,8 +144,14 @@ export const VideoView: React.FC<{
     return val;
   }, [generalUrlOfImages, urlArray]);
 
+  useMyCoolSticky({
+    parentOfSticky: parentOfStickyRef.current,
+    scrollWindow: scrollingBox,
+    theSticky: stickyRef.current,
+  });
+
   return (
-    <div ref={groundRef} className={cla(style.ground, className)}>
+    <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
         <div className={cla(style.scrollVideoBox)}>
           <div className={style.content}>

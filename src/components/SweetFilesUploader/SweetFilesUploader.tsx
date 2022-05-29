@@ -29,7 +29,7 @@ export const SweetFilesUploader: React.FC<{
   errorFromParent?: string;
 }> = ({ className, getFilesToParent, errorFromParent }) => {
   const { t } = useTranslation();
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const [newfilesArray, setNewFilesArray] = useState<File[]>([]);
   const [filesArray, setFilesArray] = useState<File[]>([]);

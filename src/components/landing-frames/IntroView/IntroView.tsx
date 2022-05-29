@@ -11,10 +11,15 @@ import { imgs } from "src/imglinks";
 // import { ReactComponent as SvgOfPlus } from "src/styling-constants/svg-items/more-btn.svg";
 import { IPlusObject, PlusBox } from "src/components/PlusBox/PlusBox";
 import { useMediaQuery } from "react-responsive";
+import { useMyCoolSticky } from "src/components/hooks/some-hooks";
 
 export const IntroView: React.FC<{
   className?: string;
-}> = ({ className }) => {
+  scrollingBox: (Window & typeof globalThis) | HTMLElement; // window or div
+}> = ({ className, scrollingBox }) => {
+  const stickyRef = useRef<HTMLDivElement | null>(null);
+  const parentOfStickyRef = useRef<HTMLDivElement | null>(null);
+
   const { t } = useTranslation();
 
   const is700AndDown = useMediaQuery({ query: "(max-width: 700px)" });
@@ -87,31 +92,39 @@ export const IntroView: React.FC<{
     }, 100);
   }, [registerFn]);
 
+  useMyCoolSticky({
+    parentOfSticky: parentOfStickyRef.current,
+    scrollWindow: scrollingBox,
+    theSticky: stickyRef.current,
+  });
+
   return (
     <div className={cla(style.ground, className)}>
-      <div className={style.wrapHelp}>
-        <div className={style.topHelp}></div>
+      <div ref={parentOfStickyRef} className={style.ground2}>
+        <div ref={stickyRef} className={style.wrapHelp}>
+          <div className={style.topHelp}></div>
 
-        <div className={style.mainBox}>
-          <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} />
-          <div className={style.introDescription}>
-            <div className={style.textView}>
-              <div className={style.title}>{t("widePlankHighStyle")}</div>
-              <div className={style.desc}>{t("achieveTheLuxuriousLook")}</div>
-              <div className={style.more}>
-                <span className={style.learnMore}>{t("learnMore")}</span>
+          <div className={style.mainBox}>
+            <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} />
+            <div className={style.introDescription}>
+              <div className={style.textView}>
+                <div className={style.title}>{t("widePlankHighStyle")}</div>
+                <div className={style.desc}>{t("achieveTheLuxuriousLook")}</div>
+                <div className={style.more}>
+                  <span className={style.learnMore}>{t("learnMore")}</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className={style.pBox}>
-            {/* <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} /> */}
-            <PlusBox
-              className={style.plusBox}
-              classOfPlusButton={style.myPlusButton}
-              openDir={"left"}
-              content={plusContent}
-            />
+            <div className={style.pBox}>
+              {/* <img className={style.introImg} alt="intro" src={imgs.home_banner_2x} /> */}
+              <PlusBox
+                className={style.plusBox}
+                classOfPlusButton={style.myPlusButton}
+                openDir={"left"}
+                content={plusContent}
+              />
+            </div>
           </div>
         </div>
       </div>

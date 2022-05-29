@@ -52,8 +52,8 @@ const changeLangAttributeOnRoot = (newLang: LangsT) => {
 const App: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const appBodyRef = useRef<HTMLDivElement>(null);
-  const wrapOfAppBodyRef = useRef<HTMLDivElement>(null);
+  const appBodyRef = useRef<HTMLDivElement | null>(null);
+  const wrapOfAppBodyRef = useRef<HTMLDivElement | null>(null);
   const { pathname } = useLocation();
 
   const storeOfStates = useAppSelector((store) => store);

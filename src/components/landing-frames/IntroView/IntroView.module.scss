@@ -5,13 +5,18 @@
   padding-right: clamp(20px, 5%, 96px);
   margin-bottom: 120px;
 
-  height: 1200px;
+  
 
   @media (max-width: 800px) {
     margin-bottom: 80px;
   }
 
+  .ground2 {
+    height: 1200px;
+  }
+
   .wrapHelp {
+    width: 100%;
     position: sticky;
     top: 0;
 
