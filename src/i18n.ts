@@ -114,7 +114,7 @@ export const tryWorkaroundForSliderButtons = () => {
   setTimeout(() => {
     const currLang = i18n.resolvedLanguage;
     changeAppLanguage(currLang); // slider buttons not woking without this workaround, I don't know why
-  }, 500);
+  }, 200);
 };
 
 tryWorkaroundForSliderButtons();

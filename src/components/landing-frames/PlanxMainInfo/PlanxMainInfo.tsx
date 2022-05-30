@@ -144,6 +144,16 @@ export const PlanxMainInfo: React.FC<{
             />
           </div>
         </div>
+
+        <div className={style.part3}>
+          <div className={style.box0}>
+            <div className={style.titleWrap}>{t("residential")}</div>
+            <div className={style.subtitleWrap}>{t("creatingAWarmInviting")}</div>
+            <div className={style.shopButtonWrap}>
+              <span className={style.span}>{t("shopPlanxCollection")}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
