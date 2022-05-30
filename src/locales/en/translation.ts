@@ -67,4 +67,11 @@ export const trEn = {
   meadow: "Meadow",
 
   startYourSearch: "Start your search with a few samples.",
+
+  whereWoodJustWontDo: "Where Wood Just Won’t Do",
+  whenItComesToIndoorFlooring: "When it comes to indoor flooring, Planx has broad appeal. Large commercial spaces benefit from its size and durability while it’s an ideal choice for a host of areas in the home.",
+  commercial: "Commercial",
+  planxWorksHardAnd: "Planx works hard and is more than capable on the job, whether in a retail, office, restaurant or other large-scale commercial setting.",
+  residential: "Residential",
+  creatingAWarmInviting: "Creating a warm, inviting environment at home is made easy with Planx, in high-traffic areas like entryways and mudrooms or in large, open concept spaces."
 };

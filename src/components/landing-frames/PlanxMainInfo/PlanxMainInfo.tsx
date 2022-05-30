@@ -33,7 +33,7 @@ export const PlanxMainInfo: React.FC<{
       {
         id: "0",
         name: "Collection Name 1",
-        slideImagePath: imgs.collection_1_2x,
+        slideImagePath: imgs.gallery_2_2x,
         plusBox: {
           imgSrc: imgs.color_acorn_2x,
           text1: "Arrowhead",
@@ -44,7 +44,7 @@ export const PlanxMainInfo: React.FC<{
       {
         id: "1",
         name: "Collection Name 2",
-        slideImagePath: imgs.collection_2_2x,
+        slideImagePath: imgs.gallery_5_2x,
         plusBox: {
           imgSrc: imgs.color_frost_2x,
           text1: "Arrowhead",
@@ -119,7 +119,7 @@ export const PlanxMainInfo: React.FC<{
           <div className={style.title}>{t("whereWoodJustWontDo")}</div>
           <div className={style.subtitle}>{t("whenItComesToIndoorFlooring")}</div>
           <div className={style.boxOfImage}>
-            <img className={style.img} alt={"main"} src={imgs.gallery_7_2x} />
+            <img className={style.img} alt={"main"} src={imgs.commercial_2x} />
             <PlusBox content={contentOfSpecificPlus} className={style.plusBox} />
           </div>
         </div>
