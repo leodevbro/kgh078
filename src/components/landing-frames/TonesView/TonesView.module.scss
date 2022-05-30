@@ -48,121 +48,10 @@
         }
       }
 
-      .frost {
-        width: 100px;
-        flex-grow: 1;
-        flex-shrink: 0;
-        min-width: max-content;
-
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-
-        .frostWrap {
-          display: flex;
-          column-gap: 12px;
-
-          align-items: center;
-
-          .textOfFrost {
-            font-size: 20px;
-            font-weight: 500;
-
-            @media (max-width: 800px) {
-              font-size: 16px;
-            }
-          }
-
-          .toneBoxes {
-            display: flex;
-
-            column-gap: 16px;
-
-            @media (max-width: 800px) {
-              column-gap: 8px;
-            }
-
-            .toneBox {
-              width: 64px;
-              height: 64px;
-
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              border: 1px solid transparent;
-
-              border-radius: 12px;
-
-              @media (max-width: 1100px) {
-                width: 32px;
-                height: 32px;
-                border-radius: 4px;
-              }
-
-              &.selected {
-                border-color: #dcdcdc;
-                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
-              }
-
-              &:nth-child(2) {
-                .innerBox {
-                  background-color: rgb(187, 161, 141);
-                }
-              }
-
-              &:nth-child(3) {
-                .innerBox {
-                  background-color: rgb(199, 169, 145);
-                }
-              }
-
-              &:nth-child(4) {
-                .innerBox {
-                  background-color: rgb(148, 126, 114);
-                }
-              }
-
-              &:nth-child(4) {
-                .innerBox {
-                  background-color: rgb(162, 136, 123);
-                }
-              }
-
-              .innerBox {
-                width: 54px;
-                height: 54px;
-                border-radius: 10px;
-
-                background-color: rgb(210, 198, 187);
-
-                &:hover {
-                  cursor: pointer;
-                }
-
-                @media (max-width: 1100px) {
-                  width: 26px;
-                  height: 26px;
-                  border-radius: 4px;
-                }
-              }
-            }
-          }
-        }
-      }
+      // .frost {}
     }
 
     .visuals {
-      
-      display: flex;
-      flex-wrap: nowrap;
-
-      column-gap: 36px;
-
-      @media (max-width: 800px) {
-        column-gap: 20px;
-      }
-
       &.tone1 {
         filter: brightness(0.9);
       }
@@ -176,38 +65,180 @@
         filter: brightness(0.6);
       }
 
-      .left {
-        // border: 1px solid blue;
-        width: 100px;
-        flex-grow: 1.5;
+      // .version1 {}
+    }
+  }
+}
 
-        .meadowImage {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 12px;
+.frost {
+  width: 100px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: max-content;
 
-          @media (max-width: 800px) {
-            border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .frostWrap {
+    display: flex;
+    column-gap: 12px;
+
+    align-items: center;
+
+    .textOfFrost {
+      font-size: 20px;
+      font-weight: 500;
+
+      @media (max-width: 800px) {
+        font-size: 16px;
+      }
+    }
+
+    .toneBoxes {
+      display: flex;
+
+      column-gap: 16px;
+
+      @media (max-width: 800px) {
+        column-gap: 8px;
+      }
+
+      .toneBox {
+        width: 64px;
+        height: 64px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid transparent;
+
+        border-radius: 12px;
+
+        @media (max-width: 1100px) {
+          width: 32px;
+          height: 32px;
+          border-radius: 4px;
+        }
+
+        &.selected {
+          border-color: #dcdcdc;
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        &:nth-child(2) {
+          .innerBox {
+            background-color: rgb(187, 161, 141);
+          }
+        }
+
+        &:nth-child(3) {
+          .innerBox {
+            background-color: rgb(199, 169, 145);
+          }
+        }
+
+        &:nth-child(4) {
+          .innerBox {
+            background-color: rgb(148, 126, 114);
+          }
+        }
+
+        &:nth-child(4) {
+          .innerBox {
+            background-color: rgb(162, 136, 123);
+          }
+        }
+
+        .innerBox {
+          width: 54px;
+          height: 54px;
+          border-radius: 10px;
+
+          background-color: rgb(210, 198, 187);
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          @media (max-width: 1100px) {
+            width: 26px;
+            height: 26px;
+            border-radius: 4px;
           }
         }
       }
+    }
+  }
+}
 
-      .right {
-        width: 100px;
-        flex-grow: 1;
-        // border: 1px solid red;
+.version1 {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex-wrap: nowrap;
+  // height: 500px;
 
-        .plankImage {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 12px;
+  column-gap: 34px;
+  row-gap: 34px;
 
-          @media (max-width: 800px) {
-            border-radius: 8px;
-          }
-        }
+  @media (max-width: 1000px) {
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .left {
+    grid-column: span 14;
+    grid-row: span 6;
+    // border: 1px solid blue;
+    // width: 100px;
+    flex-grow: 1.5;
+
+    .meadowImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+
+      @media (max-width: 800px) {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .right {
+    grid-column: span 10;
+    grid-row: span 5;
+    // width: 100px;
+    flex-grow: 1;
+    // border: 1px solid red;
+
+    .plankImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+
+      @media (max-width: 800px) {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .rightDown {
+    width: 100%;
+    grid-column: span 10;
+    grid-row: span 1;
+
+    .plankImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+
+      @media (max-width: 1000px) {
+        border-radius: 8px;
       }
     }
   }
