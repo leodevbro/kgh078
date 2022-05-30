@@ -1,8 +1,11 @@
 @import "src/styling-constants/colors.scss";
 
 .ground {
-  padding-left: clamp(20px, 5%, 96px);
-  padding-right: clamp(20px, 5%, 96px);
+  --dist-left-right: clamp(20px, 5%, 96px);
+  --column-gap: 36px;
+
+  // padding-left: clamp(20px, 5%, 96px);
+  // padding-right: clamp(20px, 5%, 96px);
   margin-bottom: 120px;
 
   @media (max-width: 800px) {
@@ -10,11 +13,235 @@
   }
 
   .mainBox {
+    // border: 1px solid red;
     // background-color: antiquewhite;
     // min-height: 400px;
 
     // display: flex;
     // align-items: center;
     // justify-content: center;
+
+    .part1 {
+      margin-bottom: 32px;
+      // border: 1px solid blue;
+      padding-left: clamp(20px, 5%, 96px);
+      padding-right: clamp(20px, 5%, 96px);
+
+      .title {
+      }
+
+      .subtitle {
+      }
+
+      .boxOfImage {
+        max-width: 1140px;
+        max-height: 660px;
+        width: 100%;
+        height: 660px;
+
+        @media (max-width: 1000px) {
+          height: 400px;
+        }
+
+        @media (max-width: 500px) {
+          height: 264px;
+        }
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+
+          @media (max-width: 800px) {
+            border-radius: 8px;
+          }
+        }
+
+        .plusBox {
+          position: absolute;
+          left: 32px;
+          bottom: 32px;
+
+          // &:hover {
+          //   cursor: pointer;
+          // }
+
+          @media (max-width: 1100px) {
+            // right: 20px;
+            left: 20px;
+            bottom: 20px;
+          }
+
+          // .myPlusButton {
+          //   @media (max-width: 1100px) {
+          //     right: initial;
+          //     left: 0px;
+          //   }
+          // }
+        }
+      }
+    }
+
+    .part2 {
+      display: flex;
+      flex-wrap: nowrap;
+
+      @media (max-width: 1100px) {
+        display: block;
+      }
+
+      .box1 {
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding-bottom: 20px;
+        width: calc(100% - 1140px);
+
+        padding-left: clamp(20px, 5%, 96px);
+        // padding-right: clamp(20px, 5%, 96px);
+
+        @media (max-width: 1100px) {
+          padding-right: clamp(20px, 5%, 96px);
+          width: 100%;
+        }
+
+        .titleWrap {
+        }
+
+        .subtitleWrap {
+        }
+
+        .shopButtonWrap {
+          color: rgb(18, 18, 18);
+
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+          // text-align: center;
+
+          @media (max-width: 1000px) {
+            font-size: 14px;
+            line-height: 18px;
+          }
+
+          .span {
+            &::after {
+              content: "";
+              width: 100%;
+              height: 1px;
+              position: absolute;
+              bottom: -5px;
+              left: 0px;
+              background-color: $black17;
+            }
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .box2 {
+        flex-shrink: 0;
+        flex-grow: 0;
+        // min-width: 1140px;
+        padding-right: calc(clamp(20px, 5%, 96px) - (var(--column-gap) / 2));
+        // width: min(100%, 1140px);
+
+        @media (max-width: 1100px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.superSlider.superSlider.superSlider.superSlider {
+  margin-bottom: 80px;
+  // border: 1px solid red;
+  // padding-left: calc(var(--dist-left-right) - (var(--column-gap) / 2));
+  // padding-right: calc(var(--dist-left-right) - (var(--column-gap) / 2));
+
+  .superSlide {
+    // border: 1px solid blue;
+    // width: initial;
+    // width: calc((100% / 3) - 0px);
+    // height: initial;
+
+    width: calc(552px + var(--column-gap));
+    height: 660px;
+
+    min-width: 50px;
+    min-height: 50px;
+    padding-left: calc(var(--column-gap) / 2);
+    padding-right: calc(var(--column-gap) / 2);
+
+    @media (max-width: 1500px) {
+      width: calc(334px + var(--column-gap));
+      height: 398px;
+    }
+
+    @media (max-width: 500px) {
+      width: calc(246px + var(--column-gap));
+      height: 336px;
+    }
+  }
+
+  .goLeft {
+    left: var(--dist-left-right);
+    display: none;
+  }
+
+  .goRight {
+    right: var(--dist-left-right);
+    display: none;
+  }
+}
+
+.slideItem {
+  width: 100%;
+  height: 100%;
+
+  .boxForImage {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 24px;
+
+    @media (max-width: 1000px) {
+      height: 336px;
+      margin-bottom: 16px;
+    }
+
+    .slideImage {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .plusBox {
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+
+      // &:hover {
+      //   cursor: pointer;
+      // }
+
+      @media (max-width: 1100px) {
+        left: 12px;
+        bottom: 12px;
+        max-width: calc(100% - 15px);
+      }
+
+      // .myPlusButton {
+      //   //
+      // }
+    }
   }
 }
