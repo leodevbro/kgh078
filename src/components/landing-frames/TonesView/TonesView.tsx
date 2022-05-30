@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 // import ReactDOM from "react-dom";
 // import ReactDOM from 'react-dom';
@@ -16,6 +16,58 @@ export const TonesView: React.FC<{
 
   const [selectedToneIndex, setSelectedToneIndex] = useState(0);
 
+  const arrayOfTonePairs = useMemo(() => {
+    const arr: {
+      id: string;
+      name: string;
+      tileImgSrc: string;
+      plankImgSrc: string;
+      perspectiveImgSrc: string;
+    }[] = [
+      {
+        id: "0",
+        name: t("frost"),
+        tileImgSrc: imgs.color_frost_2x,
+        plankImgSrc: imgs.color_acorn_frost_2x,
+        perspectiveImgSrc: imgs.color_frost_large_2x,
+      },
+
+      {
+        id: "1",
+        name: t("acorn"),
+        tileImgSrc: imgs.color_acorn_2x,
+        plankImgSrc: imgs.color_acorn_acorn_2x,
+        perspectiveImgSrc: imgs.color_acorn_large_2x,
+      },
+
+      {
+        id: "2",
+        name: t("nest"),
+        tileImgSrc: imgs.color_nest_2x,
+        plankImgSrc: imgs.color_nest_2x,
+        perspectiveImgSrc: imgs.color_nest_large_2x,
+      },
+
+      {
+        id: "3",
+        name: t("bark"),
+        tileImgSrc: imgs.color_bark_2x,
+        plankImgSrc: imgs.color_bark_small_2x,
+        perspectiveImgSrc: imgs.color_bark_large_2x,
+      },
+
+      {
+        id: "4",
+        name: t("meadow"),
+        tileImgSrc: imgs.color_meadow_2x,
+        plankImgSrc: imgs.color_acorn_meadow_2x,
+        perspectiveImgSrc: imgs.color_meadow_large_2x,
+      },
+    ];
+
+    return arr;
+  }, [t]);
+
   return (
     <div className={cla(style.ground, className)}>
       <div className={style.mainBox}>
@@ -24,7 +76,7 @@ export const TonesView: React.FC<{
           <div className={style.desc}>{t("thePlanxCollectionEffortlesslyCaptures")}</div>
           <div className={style.frost}>
             <div className={style.frostWrap}>
-              <div className={style.textOfFrost}>{t("frost")}</div>
+              <div className={style.textOfFrost}>{arrayOfTonePairs[selectedToneIndex].name}</div>
               <div className={style.toneBoxes}>
                 {[0, 1, 2, 3, 4].map((item, index) => {
                   const isSelected = index === selectedToneIndex;
@@ -54,7 +106,7 @@ export const TonesView: React.FC<{
                     <img
                       className={style.meadowImage}
                       alt="tone view"
-                      src={imgs.color_acorn_large_2x}
+                      src={arrayOfTonePairs[selectedToneIndex].perspectiveImgSrc}
                     />
                   </div>
 
@@ -62,15 +114,17 @@ export const TonesView: React.FC<{
                     <img
                       className={style.plankImage}
                       alt="tone view of plank"
-                      src={imgs.color_acorn_2x}
+                      src={arrayOfTonePairs[selectedToneIndex].tileImgSrc}
                     />
                   </div>
 
                   <div className={style.rightDown}>
                     <img
-                      className={style.plankImage}
+                      className={cla(style.plankImage2, {
+                        [style.tricky]: arrayOfTonePairs[selectedToneIndex].name === t("nest"),
+                      })}
                       alt="tone view of plank"
-                      src={imgs.color_acorn_acorn_2x}
+                      src={arrayOfTonePairs[selectedToneIndex].plankImgSrc}
                     />
 
                     <div className={style.theSize}>{`12" x 72"`}</div>
@@ -80,7 +134,7 @@ export const TonesView: React.FC<{
             />
           </div>
 
-          <div className={style.version2}>4546465</div>
+          {/* <div className={style.version2}>4546465</div> */}
         </div>
       </div>
     </div>

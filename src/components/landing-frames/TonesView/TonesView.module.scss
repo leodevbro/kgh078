@@ -52,18 +52,18 @@
     }
 
     .visuals {
-      &.tone1 {
-        filter: brightness(0.9);
-      }
-      &.tone2 {
-        filter: brightness(0.8);
-      }
-      &.tone3 {
-        filter: brightness(0.7);
-      }
-      &.tone4 {
-        filter: brightness(0.6);
-      }
+      // &.tone1 {
+      //   filter: brightness(0.9);
+      // }
+      // &.tone2 {
+      //   filter: brightness(0.8);
+      // }
+      // &.tone3 {
+      //   filter: brightness(0.7);
+      // }
+      // &.tone4 {
+      //   filter: brightness(0.6);
+      // }
 
       // .version1 {}
     }
@@ -252,7 +252,7 @@
         grid-column: span 10;
         grid-row: span 3;
 
-        .plankImage {
+        .plankImage2 {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -264,6 +264,10 @@
 
           @media (max-width: 500px) {
             border-radius: 4px;
+          }
+
+          &.tricky {
+            object-position: 0 70%;
           }
         }
 
