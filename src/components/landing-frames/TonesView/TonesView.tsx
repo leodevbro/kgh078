@@ -72,13 +72,15 @@ export const TonesView: React.FC<{
                       alt="tone view of plank"
                       src={imgs.color_acorn_acorn_2x}
                     />
+
+                    <div className={style.theSize}>{`12" x 72"`}</div>
                   </div>
                 </div>
               }
             />
-
-            <div className={style.version2}>4546465</div>
           </div>
+
+          <div className={style.version2}>4546465</div>
         </div>
       </div>
     </div>
