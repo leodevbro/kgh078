@@ -7,6 +7,7 @@ import { cla } from "src/App";
 import style from "./TonesView.module.scss";
 
 import { imgs } from "src/imglinks";
+import { DivWithAspectRatio } from "src/components/DivWithAspectRatio/DivWithAspectRatio";
 
 export const TonesView: React.FC<{
   className?: string;
@@ -44,11 +45,39 @@ export const TonesView: React.FC<{
         </div>
 
         <div className={cla(style.visuals, style[`tone${selectedToneIndex}`])}>
-          <div className={style.left}>
-            <img className={style.meadowImage} alt="tone view" src={imgs.color_acorn_large_2x} />
-          </div>
-          <div className={style.right}>
-            <img className={style.plankImage} alt="tone view of plank" src={imgs.color_acorn_2x} />
+          <div className={style.version1}>
+            <DivWithAspectRatio
+              classOfPaddingTop={style.myAspectRatio}
+              content={
+                <div className={style.parent}>
+                  <div className={style.left}>
+                    <img
+                      className={style.meadowImage}
+                      alt="tone view"
+                      src={imgs.color_acorn_large_2x}
+                    />
+                  </div>
+
+                  <div className={style.right}>
+                    <img
+                      className={style.plankImage}
+                      alt="tone view of plank"
+                      src={imgs.color_acorn_2x}
+                    />
+                  </div>
+
+                  <div className={style.rightDown}>
+                    <img
+                      className={style.plankImage}
+                      alt="tone view of plank"
+                      src={imgs.color_acorn_acorn_2x}
+                    />
+                  </div>
+                </div>
+              }
+            />
+
+            <div className={style.version2}>4546465</div>
           </div>
         </div>
       </div>
