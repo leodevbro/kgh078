@@ -37,22 +37,58 @@
     white-space: nowrap;
   }
 
+  table,
+  thead,
+  tbody,
+  tr,
   th,
   td {
-    border: 1px solid rgb(221, 221, 221);
-    padding: 16px;
+    height: 100%;
+    // width: 100%;
+  }
+
+  th,
+  td {
+    // border: 1px solid rgb(221, 221, 221);
+    // padding: 16px;
+    padding: 0px;
+    border: none;
+    margin: 0px;
+
+    .dat {
+      display: flex;
+      align-items: center;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      border-right: 1px solid rgb(221, 221, 221);
+      border-bottom: 1px solid rgb(221, 221, 221);
+    }
 
     &:first-child {
-      border-left-color: transparent;
+      // border-left-color: transparent;
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      background-color: rgb(250, 250, 250);
+
+      width: initial;
+      // .dat {
+
+      // }
     }
 
     &:last-child {
-      border-right-color: transparent;
+      // border-right-color: transparent;
     }
   }
 
   thead {
     .tr1 {
+      border-top: 1px solid rgb(221, 221, 221);
       background-color: rgb(245, 245, 245);
       font-size: 20px;
       line-height: 28px;
@@ -70,8 +106,12 @@
         // border-left: 1px solid rgb(245, 245, 245);
         // border-right: 1px solid rgb(245, 245, 245);
 
-        border-left-color: rgb(245, 245, 245);
-        border-right-color: rgb(245, 245, 245);
+        // border-left-color: rgb(245, 245, 245);
+        // border-right-color: rgb(245, 245, 245);
+
+        &:first-child {
+          background-color: rgb(245, 245, 245);
+        }
       }
     }
     .tr2 {
@@ -87,23 +127,33 @@
       }
 
       .interior {
-        border-right-color: transparent;
+        // border-right-color: transparent;
         font-weight: 400;
+        .dat {
+          border-right-color: transparent;
+        }
       }
 
       .exterior {
-        border-left-color: transparent;
+        // border-left-color: transparent;
         font-weight: 400;
+        .dat {
+          border-left-color: transparent;
+        }
       }
     }
   }
 
   tbody .interior {
-    border-right-color: transparent;
+    .dat {
+      border-right-color: transparent;
+    }
   }
 
   tbody .exterior {
-    border-left-color: transparent;
+    .dat {
+      border-left-color: transparent;
+    }
   }
 
   tbody {
@@ -159,6 +209,22 @@
         margin-right: 5px;
       }
     }
+
+    clip-path: inset(0% 0% 0% calc(1px + clamp(20px, 5%, 96px)));
+    transform: scaleZ(1);
+    transform: translateZ(0);
+
+    // &::before {
+    //   content: "";
+    //   background-color: rgb(255, 255, 255);
+    //   background-color: red;
+    //   position: absolute;
+    //   left: 0px;
+    //   top: 0px;
+    //   height: 100%;
+    //   width: clamp(20px, 5%, 96px);
+    //   z-index: 7;
+    // }
   }
 
   .foot {

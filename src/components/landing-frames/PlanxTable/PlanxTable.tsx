@@ -65,143 +65,205 @@ export const PlanxTable: React.FC<{
         {...events}
         ref={ref} // add reference and events to the wrapping div
       >
-        <table className={style.myTable}>
+        <table cellSpacing="0" className={style.myTable}>
           <thead>
             <tr className={style.tr1}>
-              <th></th>
-              <th colSpan={2}>Floors</th>
-              <th colSpan={2}>Walls</th>
-              <th colSpan={2}>Counter Tops</th>
-              <th colSpan={2}>Shower Floors</th>
-              <th colSpan={2}>Shower Walls</th>
-              <th colSpan={2}>Pools / Spas</th>
+              <th>
+                <div className={style.dat}></div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Floors</div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Walls</div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Counter Tops</div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Shower Floors</div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Shower Walls</div>
+              </th>
+
+              <th colSpan={2}>
+                <div className={style.dat}>Pools / Spas</div>
+              </th>
             </tr>
 
             <tr className={style.tr2}>
-              <th></th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
-              <th className={style.interior}>Interior</th>
-              <th className={style.exterior}>Exterior</th>
+              <th>
+                <div className={style.dat}></div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
+
+              <th className={style.interior}>
+                <div className={style.dat}>Interior</div>
+              </th>
+
+              <th className={style.exterior}>
+                <div className={style.dat}>Exterior</div>
+              </th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>Residential</td>
+              <td>
+                <div className={style.dat}>Residential</div>
+              </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot2}</div>
+                <div className={style.dat}>{dot2}</div>
               </td>
 
               <td className={style.interior}>
-                <div style={{ display: "flex" }}>
+                <div className={style.dat} style={{ display: "flex" }}>
                   {dot1}
                   {dot3}
                 </div>
               </td>
 
               <td className={style.exterior}>
-                <div style={{ display: "flex" }}>
+                <div className={style.dat} style={{ display: "flex" }}>
                   {dot1}
                   {dot3}
                 </div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div></div>
+                <div className={style.dat}></div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
             </tr>
 
             <tr>
-              <td>Commercial</td>
-
-              <td className={style.interior}>
-                <div>{dot1}</div>
-              </td>
-
-              <td className={style.exterior}>
-                <div></div>
+              <td>
+                <div className={style.dat}>Commercial</div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}></div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div></div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}></div>
               </td>
 
               <td className={style.interior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
               </td>
 
               <td className={style.exterior}>
-                <div>{dot1}</div>
+                <div className={style.dat}>{dot1}</div>
+              </td>
+
+              <td className={style.interior}>
+                <div className={style.dat}>{dot1}</div>
+              </td>
+
+              <td className={style.exterior}>
+                <div className={style.dat}>{dot1}</div>
               </td>
             </tr>
           </tbody>
