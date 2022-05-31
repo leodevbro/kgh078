@@ -114,6 +114,8 @@ export const PlanxMainInfo: React.FC<{
 
   return (
     <div className={cla(style.ground, className)}>
+      <div className={style.myAbso}></div>
+
       <div className={style.mainBox}>
         <div className={style.part1}>
           <div className={style.title}>{t("whereWoodJustWontDo")}</div>

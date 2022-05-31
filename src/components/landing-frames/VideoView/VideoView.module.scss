@@ -58,6 +58,10 @@
     top: 0;
     // left: 0;
 
+    @media (max-width: 900px) {
+      height: 90vh;
+    }
+
     .canvas {
       // padding-top: 100px;
 

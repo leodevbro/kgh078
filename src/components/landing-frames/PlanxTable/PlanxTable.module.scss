@@ -1,13 +1,16 @@
 @import "src/styling-constants/colors.scss";
 
 .ground {
+  background-color: rgb(250, 250, 250);
   // padding-left: clamp(20px, 5%, 96px);
   // padding-right: clamp(20px, 5%, 96px);
   max-width: 100%;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
+  padding-bottom: 60px;
 
   @media (max-width: 800px) {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
 
   .wrapOfTitle {

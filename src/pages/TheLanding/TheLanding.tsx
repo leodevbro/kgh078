@@ -48,7 +48,7 @@ export const TheLanding: React.FC<{
 
   useEffect(() => {
     setTimeout(() => {
-      if (mainAppBody.getBoundingClientRect().height < 2500) {
+      if (mainAppBody.getBoundingClientRect().height <= window.innerHeight) {
         scrollBoxRef.current = mainAppBody;
       } else {
         wrapOfMainAppBody.style.overflow = "initial"; // this helps sticky element to work
