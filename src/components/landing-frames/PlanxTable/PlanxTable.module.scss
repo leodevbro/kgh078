@@ -3,13 +3,123 @@
 .ground {
   // padding-left: clamp(20px, 5%, 96px);
   // padding-right: clamp(20px, 5%, 96px);
+  max-width: 100%;
   margin-bottom: 120px;
 
   @media (max-width: 800px) {
     margin-bottom: 80px;
   }
 
+  table {
+    border-collapse: collapse;
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    border: 1px solid rgb(221, 221, 221);
+    padding: 16px;
+
+    &:first-child {
+      border-left-color: transparent;
+    }
+
+    &:last-child {
+      border-right-color: transparent;
+    }
+  }
+
+  thead {
+    .tr1 {
+      background-color: rgb(245, 245, 245);
+      font-size: 20px;
+      line-height: 28px;
+
+      color: #323232;
+
+      @media (max-width: 1000px) {
+        font-size: 16px;
+        line-height: 24px;
+
+        letter-spacing: 0.01em;
+      }
+
+      th {
+        // border-left: 1px solid rgb(245, 245, 245);
+        // border-right: 1px solid rgb(245, 245, 245);
+
+        border-left-color: rgb(245, 245, 245);
+        border-right-color: rgb(245, 245, 245);
+      }
+    }
+    .tr2 {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.02em;
+
+      color: #111111;
+
+      .interior {
+        border-right-color: transparent;
+        font-weight: 400;
+      }
+
+      .exterior {
+        border-left-color: transparent;
+        font-weight: 400;
+      }
+    }
+  }
+
+  tbody .interior {
+    border-right-color: transparent;
+  }
+
+  tbody .exterior {
+    border-left-color: transparent;
+  }
+
+  tbody {
+    .interior,
+    .exterior {
+      & > div {
+        padding-left: 35%;
+      }
+    }
+
+    tr {
+      td {
+        &:first-child {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+
+          color: #323232;
+        }
+      }
+    }
+  }
+
   .mainBox {
-    //
+    max-width: 100%;
+    overflow-x: auto;
+    padding-left: clamp(20px, 5%, 96px);
+    padding-right: clamp(20px, 5%, 96px);
+
+    // hide scrollbar
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
+
+    .myTable {
+      width: 100%;
+    }
   }
 }
