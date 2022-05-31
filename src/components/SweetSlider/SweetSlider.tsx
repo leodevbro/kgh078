@@ -45,6 +45,7 @@ export const SweetSlider: React.FC<{
   return (
     <div className={cla(style.ground, className)}>
       <Swiper
+        mousewheel={true}
         slidesPerView={"auto"}
         spaceBetween={0}
         slidesPerGroup={1}
