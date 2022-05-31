@@ -52,6 +52,7 @@
     }
 
     .visuals {
+      opacity: initial;
       // &.tone1 {
       //   filter: brightness(0.9);
       // }
@@ -199,6 +200,11 @@
       @media (max-width: 600px) {
         column-gap: 10px;
         row-gap: 10px;
+      }
+
+      @media (max-width: 380px) {
+        column-gap: 5px;
+        row-gap: 5px;
       }
 
       .left {

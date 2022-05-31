@@ -65,6 +65,7 @@ export const TheLanding: React.FC<{
       <div className={style.center}>
         <IntroView scrollingBox={scrollBoxRef.current} />
         <TonesView />
+
         {videoCanRender && (
           <VideoView
             frameCount={urlArrayOfVideoFrames.length - 2}
