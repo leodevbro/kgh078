@@ -8,6 +8,7 @@ import { GreenFriendly } from "src/components/landing-frames/GreenFriendly/Green
 // import { cla } from "src/App";
 import { IntroView } from "src/components/landing-frames/IntroView/IntroView";
 import { PlanxMainInfo } from "src/components/landing-frames/PlanxMainInfo/PlanxMainInfo";
+import { PlanxTable } from "src/components/landing-frames/PlanxTable/PlanxTable";
 import { SeeMoreFrame } from "src/components/landing-frames/SeeMoreFrame/SeeMoreFrame";
 import { TheFinerPoints } from "src/components/landing-frames/TheFinerPoints/TheFinerPoints";
 import { TonesView } from "src/components/landing-frames/TonesView/TonesView";
@@ -76,6 +77,7 @@ export const TheLanding: React.FC<{
         )}
 
         <PlanxMainInfo />
+        <PlanxTable />
         {/* aaaa */}
         {/* <GalleryView /> */}
         <GalleryView2 />
