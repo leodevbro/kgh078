@@ -181,7 +181,7 @@ export const VideoView: React.FC<{
                   value={inputVal}
                   data-frame-start={"1"}
                   // data-frame-end="284"
-                  data-frame-end={frameCount - 1}
+                  data-frame-end={frameCount}
                   data-frame-id-padding={String(numPaddingOfFrameId)}
                 />
               </section>

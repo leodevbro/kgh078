@@ -68,7 +68,7 @@ export const TheLanding: React.FC<{
 
         {videoCanRender && (
           <VideoView
-            frameCount={urlArrayOfVideoFrames.length - 2}
+            frameCount={urlArrayOfVideoFrames.length - 1}
             scrollingBox={scrollBoxRef.current}
             // generalUrlOfImages={"./videos/frames/image{{id}}.jpg"}
             urlArray={urlArrayOfVideoFrames}
