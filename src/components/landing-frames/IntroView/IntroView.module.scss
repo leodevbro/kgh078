@@ -21,14 +21,14 @@
     top: 0;
 
     .topHelp {
-      height: 148px;
+      height: 80px;
 
       @media (max-width: 1000px) {
-        height: 135px;
+        height: 60px;
       }
 
       @media (max-width: 500px) {
-        height: 116px;
+        height: 40px;
       }
 
       @media (max-height: 500px) {
