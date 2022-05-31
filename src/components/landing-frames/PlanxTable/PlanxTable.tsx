@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { useDraggable } from "react-use-draggable-scroll";
 
 import { cla } from "src/App";
@@ -8,15 +8,15 @@ import style from "./PlanxTable.module.scss";
 export const PlanxTable: React.FC<{
   className?: string;
 }> = ({ className }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const ref = useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
   const { events } = useDraggable(ref); // Now we pass the reference to the useDraggable hook:
 
   const dot1 = (
     <div
+      className={style.dot}
       style={{
-        marginRight: "5px",
         backgroundColor: "rgb(54, 54, 54)",
         width: "10px",
         height: "10px",
@@ -27,8 +27,8 @@ export const PlanxTable: React.FC<{
 
   const dot2 = (
     <div
+      className={style.dot}
       style={{
-        marginRight: "5px",
         border: "1px solid rgb(54, 54, 54)",
         width: "10px",
         height: "10px",
@@ -39,8 +39,8 @@ export const PlanxTable: React.FC<{
 
   const dot3 = (
     <div
+      className={style.dot}
       style={{
-        marginRight: "5px",
         backgroundColor: "rgb(9, 103, 210)",
         width: "10px",
         height: "10px",
@@ -51,6 +51,10 @@ export const PlanxTable: React.FC<{
 
   return (
     <div className={cla(style.ground, className)}>
+      <div className={style.wrapOfTitle}>
+        <span className={style.title}>Planx Applications</span>
+      </div>
+
       <div
         className={cla(
           style.mainBox,
@@ -202,6 +206,23 @@ export const PlanxTable: React.FC<{
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div className={style.foot}>
+        <div className={style.left}>
+          <div className={style.inf}>
+            <span>{dot2}</span>
+            <span>May be suitable for Exterior Floors</span>
+          </div>
+          <div className={style.inf}>
+            <span>{dot3}</span>
+            <span>Special Order</span>
+          </div>
+        </div>
+
+        <div className={style.right}>
+          <span className={style.span}>Download Tearsheet</span>
+        </div>
       </div>
     </div>
   );
